@@ -1,11 +1,23 @@
 {
  "quarter": "2016Q3",
+ "review_size_jumps": [
+  {
+   "name": "FRONTIER INVESTMENT MGMT CO",
+   "aum": 8537581000.0,
+   "aum_prior": 785742000.0
+  },
+  {
+   "name": "Legato Capital Management LLC",
+   "aum": 18883346160.615677,
+   "aum_prior": 57956000.0
+  }
+ ],
  "passed": 1,
  "total": 1,
  "checks": [
   {
    "check": "largest filer below $15tn",
-   "largest": "VANGUARD GROUP INC",
+   "largest": "Vanguard (all filing entities)",
    "aum": 1702307730000.0,
    "result": "pass"
   }
