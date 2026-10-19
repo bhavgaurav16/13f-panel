@@ -1,27 +1,6 @@
 {
  "quarter": "2017Q4",
- "review_size_jumps": [
-  {
-   "name": "CREDIT AGRICOLE S A",
-   "aum": 1185106000.0,
-   "aum_prior": 28742418000.0
-  },
-  {
-   "name": "NORGES BANK",
-   "aum": 279002369000.0,
-   "aum_prior": 0.0
-  },
-  {
-   "name": "ELEMENT CAPITAL MANAGEMENT LLC",
-   "aum": 4862825000.0,
-   "aum_prior": 231556000.0
-  },
-  {
-   "name": "Optiver US LLC",
-   "aum": 2144264548.8482306,
-   "aum_prior": 23163524000.0
-  }
- ],
+ "review_size_jumps": [],
  "passed": 1,
  "total": 1,
  "checks": [
