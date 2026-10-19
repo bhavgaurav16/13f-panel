@@ -1,7 +1,7 @@
 {
  "quarter": "2026Q2",
- "passed": 9,
- "total": 9,
+ "passed": 10,
+ "total": 10,
  "checks": [
   {
    "manager": "AKRE CAPITAL",
@@ -87,6 +87,12 @@
    "manager": "HIMALAYA CAPITAL",
    "expected_positions": 8,
    "got_positions": 8,
+   "result": "pass"
+  },
+  {
+   "check": "largest filer below $15tn",
+   "largest": "BlackRock, Inc.",
+   "aum": 6706454805102.0,
    "result": "pass"
   }
  ]
