@@ -1,32 +1,6 @@
 {
  "quarter": "2020Q3",
- "review_size_jumps": [
-  {
-   "name": "SALESFORCE.COM, INC",
-   "aum": 1388632000.0,
-   "aum_prior": 8859000.0
-  },
-  {
-   "name": "Francisco Partners Management, LP",
-   "aum": 4709351000.0,
-   "aum_prior": 23396000.0
-  },
-  {
-   "name": "SC XII MANAGEMENT LLC",
-   "aum": 2138376000.0,
-   "aum_prior": 0.0
-  },
-  {
-   "name": "Summit X, LLC",
-   "aum": 3273679656.3157473,
-   "aum_prior": 270470000.0
-  },
-  {
-   "name": "Newlight Partners LP",
-   "aum": 3002530000.0,
-   "aum_prior": 187055000.0
-  }
- ],
+ "review_size_jumps": [],
  "passed": 1,
  "total": 1,
  "checks": [
