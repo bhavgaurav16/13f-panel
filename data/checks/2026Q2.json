@@ -1,0 +1,93 @@
+{
+ "quarter": "2026Q2",
+ "passed": 9,
+ "total": 9,
+ "checks": [
+  {
+   "manager": "AKRE CAPITAL",
+   "issuer": "MASTERCARD",
+   "expected_shares": 1989906,
+   "expected_status": "trimmed",
+   "cik": "0001112520",
+   "got_shares": 1989906.0,
+   "got_status": "trimmed",
+   "result": "pass"
+  },
+  {
+   "manager": "AKRE CAPITAL",
+   "issuer": "COSTAR",
+   "expected_shares": 11699396,
+   "expected_status": "added",
+   "cik": "0001112520",
+   "got_shares": 11699396.0,
+   "got_status": "added",
+   "result": "pass"
+  },
+  {
+   "manager": "COATUE",
+   "issuer": "MICRON",
+   "expected_shares": 3142269,
+   "expected_status": "added",
+   "cik": "0001135730",
+   "got_shares": 3142269.0,
+   "got_status": "added",
+   "result": "pass"
+  },
+  {
+   "manager": "COATUE",
+   "issuer": "INTEL",
+   "expected_shares": 12084027,
+   "expected_status": "new",
+   "cik": "0001135730",
+   "got_shares": 12084027.0,
+   "got_status": "new",
+   "result": "pass"
+  },
+  {
+   "manager": "LONE PINE",
+   "issuer": "NEBIUS",
+   "expected_shares": 4258008,
+   "expected_status": "new",
+   "cik": "0001061165",
+   "got_shares": 4258008.0,
+   "got_status": "new",
+   "result": "pass"
+  },
+  {
+   "manager": "VIKING GLOBAL",
+   "issuer": "VISA",
+   "expected_shares": 6393604,
+   "expected_status": "added",
+   "cik": "0001103804",
+   "got_shares": 6393604.0,
+   "got_status": "added",
+   "result": "pass"
+  },
+  {
+   "manager": "FUNDSMITH",
+   "issuer": "UBER",
+   "expected_shares": 8943151,
+   "expected_status": "new",
+   "cik": "0001569205",
+   "got_shares": 8943151.0,
+   "got_status": "new",
+   "result": "pass"
+  },
+  {
+   "manager": "HIMALAYA CAPITAL",
+   "issuer": "PDD",
+   "expected_shares": 10761119,
+   "expected_status": "added",
+   "cik": "0001709323",
+   "got_shares": 10761119.0,
+   "got_status": "added",
+   "result": "pass"
+  },
+  {
+   "manager": "HIMALAYA CAPITAL",
+   "expected_positions": 8,
+   "got_positions": 8,
+   "result": "pass"
+  }
+ ]
+}
