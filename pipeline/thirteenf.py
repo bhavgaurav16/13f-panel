@@ -134,7 +134,30 @@ def fix_units(info):
         idx = info.set_index(["CIK", "Q"]).index.isin(bad)
         info.loc[idx, "VALUE"] *= 1000.0
         print(f"rescaled {len(bad)} filer-quarters reporting in $000s", file=sys.stderr)
+    info, nrow, nhuge = fix_rows(info)
+    print(f"revalued {nrow} lines with implausible prices, zeroed {nhuge}", file=sys.stderr)
     return info
+
+
+def fix_rows(info):
+    """Line-level sanity check. A holding line whose implied price is >50x or <1/50x the cross-filer median
+    for that CUSIP (3+ holders) is a data-entry error. Always take the smaller reading: revalue an inflated value
+    at shares x median price, or restate inflated shares as value / median price. Lines above
+    $1.5tn (larger than any plausible single position) with no usable median are zeroed. Returns counts."""
+    sh = (info.SSHPRNAMTTYPE == "SH") & (info.SSHPRNAMT > 0) & (info.VALUE > 0)
+    eq = info[sh & (info.PUTCALL == "")]
+    g = (eq.VALUE / eq.SSHPRNAMT).groupby(eq.CUSIP).agg(["median", "count"])
+    med = info.CUSIP.map(g["median"])
+    cnt = info.CUSIP.map(g["count"]).fillna(0)
+    ratio = info.VALUE / (info.SSHPRNAMT * med)
+    hi = sh & (cnt >= 3) & (ratio > 50)     # value typo: revalue at shares x median price
+    lo = sh & (cnt >= 3) & (ratio < 0.02)   # share-count typo (or value in $000s): keep value, restate shares
+    info.loc[hi, "VALUE"] = info.loc[hi, "SSHPRNAMT"] * med[hi]
+    info.loc[lo, "SSHPRNAMT"] = info.loc[lo, "VALUE"] / med[lo]
+    bad = hi | lo
+    huge = info.VALUE > 1.5e12
+    info.loc[huge, "VALUE"] = 0.0
+    return info, int(bad.sum()), int(huge.sum())
 
 
 def quarter_tables(info, q):
@@ -182,10 +205,13 @@ def compute_quarter(info, names, q):
 
     # split detection: median share ratio across continuing holders
     hold = m[(m.SH > 0) & (m.SH_P > 0)]
-    ratio = (hold.SH / hold.SH_P).groupby(hold.CUSIP).agg(["median", "count"])
-    split = ratio[(ratio["count"] >= 5) & ((ratio["median"] > 1.8) | (ratio["median"] < 0.55))]["median"]
-    common = np.array([1/10, 1/8, 1/5, 1/4, 1/3, 1/2, 2, 3, 4, 5, 8, 10, 15, 20, 25, 30, 40, 50])
+    hr = hold.SH / hold.SH_P
+    ratio = hr.groupby(hold.CUSIP).agg(["median", "count"])
+    split = ratio[(ratio["count"] >= 10) & ((ratio["median"] > 1.8) | (ratio["median"] < 0.55))]["median"]
+    common = np.array([1/20, 1/10, 1/8, 1/5, 1/4, 1/3, 1/2, 2, 3, 4, 5, 6, 8, 10, 15, 20, 25, 30, 40, 50])
     split = split.map(lambda r: common[np.argmin(np.abs(np.log(common / r)))] if np.min(np.abs(np.log(common / r))) < 0.08 else np.nan).dropna()
+    near = (np.abs(np.log(hr / hold.CUSIP.map(split))) < 0.1).groupby(hold.CUSIP).mean()
+    split = split[near.reindex(split.index).fillna(0) >= 0.7]
     m["ADJ"] = m.CUSIP.map(split).fillna(1.0)
     m["SH_P"] = m.SH_P * m.ADJ
 

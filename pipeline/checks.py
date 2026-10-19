@@ -41,6 +41,9 @@ def main(q):
         x = f[f.name.fillna("").str.upper().str.contains(mgr)].sort_values("aum", ascending=False)
         got = int(x.n_positions.iloc[0]) if len(x) else None
         res.append({"manager": mgr, "expected_positions": n, "got_positions": got, "result": "pass" if got == n else "FAIL"})
+    top = f.nlargest(2, "aum")
+    res.append({"check": "largest filer below $15tn", "largest": str(top.name.iloc[0]), "aum": float(top.aum.iloc[0]),
+                "result": "pass" if top.aum.iloc[0] < 15e12 else "FAIL"})
     out = {"quarter": q, "passed": sum(r["result"] == "pass" for r in res), "total": len(res), "checks": res}
     os.makedirs(os.path.join(DATA, "checks"), exist_ok=True)
     json.dump(out, open(os.path.join(DATA, "checks", f"{q}.json"), "w"), indent=1, default=str)
@@ -48,6 +51,6 @@ def main(q):
 
 
 if __name__ == "__main__":
-    for q in sys.argv[1:]:
+    for q in sys.argv[1:]:  # the size check runs for every quarter; share checks only where figures are known
         if os.path.exists(os.path.join(DATA, "features", f"{q}.parquet")):
             main(q)

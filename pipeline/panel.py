@@ -195,7 +195,10 @@ def load_quarter(paths, q):
     # units: pre-2023 filings reported $000s
     info.loc[info["FILED"] < UNITS_CUTOFF, "VALUE"] *= 1000.0
     info, nfix = fix_units(info)
+    info, nrow, nhuge = fix_rows(info)
     checks["unit_fixes"] = nfix
+    checks["row_value_fixes"] = nrow
+    checks["rows_zeroed"] = nhuge
 
     names = chosen.sort_values("FILED").groupby("CIK")["FILINGMANAGER_NAME"].last()
     filed = chosen.groupby("CIK")["FILED"].max()
@@ -213,6 +216,27 @@ def fix_units(info):
     info.loc[info.CIK.isin(up), "VALUE"] *= 1000.0
     info.loc[info.CIK.isin(down), "VALUE"] /= 1000.0
     return info, int(len(up) + len(down))
+
+
+def fix_rows(info):
+    """Line-level sanity check. A holding line whose implied price is >50x or <1/50x the cross-filer median
+    for that CUSIP (3+ holders) is a data-entry error. Always take the smaller reading: revalue an inflated value
+    at shares x median price, or restate inflated shares as value / median price. Lines above
+    $1.5tn (larger than any plausible single position) with no usable median are zeroed. Returns counts."""
+    sh = (info.SSHPRNAMTTYPE == "SH") & (info.SSHPRNAMT > 0) & (info.VALUE > 0)
+    eq = info[sh & (info.PUTCALL == "")]
+    g = (eq.VALUE / eq.SSHPRNAMT).groupby(eq.CUSIP).agg(["median", "count"])
+    med = info.CUSIP.map(g["median"])
+    cnt = info.CUSIP.map(g["count"]).fillna(0)
+    ratio = info.VALUE / (info.SSHPRNAMT * med)
+    hi = sh & (cnt >= 3) & (ratio > 50)     # value typo: revalue at shares x median price
+    lo = sh & (cnt >= 3) & (ratio < 0.02)   # share-count typo (or value in $000s): keep value, restate shares
+    info.loc[hi, "VALUE"] = info.loc[hi, "SSHPRNAMT"] * med[hi]
+    info.loc[lo, "SSHPRNAMT"] = info.loc[lo, "VALUE"] / med[lo]
+    bad = hi | lo
+    huge = info.VALUE > 1.5e12
+    info.loc[huge, "VALUE"] = 0.0
+    return info, int(bad.sum()), int(huge.sum())
 
 
 # ----------------------------------------------------------------------------- books
@@ -239,13 +263,17 @@ def prices(book, issuer):
 def splits(cur, prv):
     m = cur.merge(prv, on=["CIK", "CUSIP"], suffixes=("", "_P"))
     m = m[(m.SH > 0) & (m.SH_P > 0)]
-    ratio = (m.SH / m.SH_P).groupby(m.CUSIP).agg(["median", "count"])
-    cand = ratio[(ratio["count"] >= 5) & ((ratio["median"] > 1.8) | (ratio["median"] < 0.55))]["median"]
+    r = m.SH / m.SH_P
+    ratio = r.groupby(m.CUSIP).agg(["median", "count"])
+    cand = ratio[(ratio["count"] >= 10) & ((ratio["median"] > 1.8) | (ratio["median"] < 0.55))]["median"]
     common = np.array([1/20, 1/10, 1/8, 1/5, 1/4, 1/3, 1/2, 2, 3, 4, 5, 6, 8, 10, 15, 20, 25, 30, 40, 50])
-    def snap(r):
-        d = np.abs(np.log(common / r))
+    def snap(x):
+        d = np.abs(np.log(common / x))
         return common[np.argmin(d)] if d.min() < 0.08 else np.nan
-    return cand.map(snap).dropna()
+    snapped = cand.map(snap).dropna()
+    # a real split moves nearly every holder by the same ratio; require 70%+ of holders within 10% of it
+    near = (np.abs(np.log(r / m.CUSIP.map(snapped))) < 0.1).groupby(m.CUSIP).mean()
+    return snapped[near.reindex(snapped.index).fillna(0) >= 0.7]
 
 
 def features(q, cur, prv, opts, px, filers):
