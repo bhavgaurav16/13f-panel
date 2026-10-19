@@ -1,11 +1,38 @@
 {
  "quarter": "2019Q2",
+ "review_size_jumps": [
+  {
+   "name": "SHELTON CAPITAL MANAGEMENT",
+   "aum": 1705967000.0,
+   "aum_prior": 24563704.48855838
+  },
+  {
+   "name": "TEXAS TREASURY SAFEKEEPING TRUST CO",
+   "aum": 3019120000.0,
+   "aum_prior": 300100000.0
+  },
+  {
+   "name": "NUVEEN ASSET MANAGEMENT, LLC",
+   "aum": 253860438000.0,
+   "aum_prior": 18725755000.0
+  },
+  {
+   "name": "Meridian Wealth Management, LLC",
+   "aum": 2470835000.0,
+   "aum_prior": 219762000.0
+  },
+  {
+   "name": "BC Partners Advisors L.P.",
+   "aum": 13317800000.0,
+   "aum_prior": 1234836000.0
+  }
+ ],
  "passed": 1,
  "total": 1,
  "checks": [
   {
    "check": "largest filer below $15tn",
-   "largest": "VANGUARD GROUP INC",
+   "largest": "Vanguard (all filing entities)",
    "aum": 2657985145000.0,
    "result": "pass"
   }
