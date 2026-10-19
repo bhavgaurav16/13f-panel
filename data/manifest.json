@@ -2,9 +2,10 @@
  "latest": "2026Q2",
  "quarters": {
   "2013Q2": {
-   "built": "2026-10-19T12:17:04+00:00",
+   "built": "2026-10-19T14:46:54+00:00",
    "candidates": 2085,
    "checks": {
+    "copied_share_field_filers": 0,
     "coverpage_filings_compared": 3362,
     "coverpage_value_match_share": 0.942296252230815,
     "row_value_fixes": 1285,
