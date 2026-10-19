@@ -29,7 +29,7 @@ def world(tmp_path, monkeypatch):
     # Q1 2023 filed in window 01mar2023-31may2023 (dollars); Q4 2022 filed Feb 2023 window (dollars too)
     # Manager A (concentrated): Q4 holds AAA 100sh, BBB 50sh; Q1: AAA 120sh (added), CCC 10sh (new), BBB exited
     # Manager B (in $000s by mistake in Q1), plus 4 other holders to give stable median prices; DDD 2:1 split
-    others = [f"000000000{i}" for i in range(3, 9)]
+    others = [f"{i:010d}" for i in range(3, 13)]
     def book(acc, cik, rows):
         return [[acc, n, "COM", c, v, sh, "SH", ""] for n, c, v, sh in rows]
     q4, q1, s4, s1, sm = [], [], [], [], []
@@ -100,3 +100,30 @@ def test_fix_units_integer_input():
     info["SSHPRNAMT"] = pd.to_numeric(info["SSHPRNAMT"], errors="coerce").fillna(0.0).astype("float64")
     info, n = panel.fix_units(info)
     assert n == 1 and info[info.CIK == "A"].VALUE.sum() == pytest.approx(6000.014)
+
+
+def test_fix_rows_fat_finger():
+    rows = []
+    for cik in ["A", "B", "C", "D"]:
+        rows.append({"CIK": cik, "CUSIP": "X00000001", "SSHPRNAMT": 100.0, "VALUE": 1000.0, "SSHPRNAMTTYPE": "SH", "PUTCALL": ""})
+    rows[0]["VALUE"] = 1000.0 * 1e6          # one line typed a million times too big
+    rows.append({"CIK": "E", "CUSIP": "Z00000001", "SSHPRNAMT": 1.0, "VALUE": 5e12, "SSHPRNAMTTYPE": "SH", "PUTCALL": ""})
+    info, nrow, nhuge = panel.fix_rows(pd.DataFrame(rows))
+    assert nrow == 1 and nhuge == 1
+    assert info.loc[0, "VALUE"] == pytest.approx(1000.0) and info.loc[4, "VALUE"] == 0.0
+
+
+def test_fix_rows_share_typo_is_conservative():
+    rows = [{"CIK": c, "CUSIP": "X00000001", "SSHPRNAMT": 100.0, "VALUE": 1000.0, "SSHPRNAMTTYPE": "SH", "PUTCALL": ""}
+            for c in "ABCD"]
+    rows[0]["SSHPRNAMT"] = 100.0 * 1e4          # shares typed 10,000x too big, value correct
+    info, nrow, _ = panel.fix_rows(pd.DataFrame(rows))
+    assert nrow == 1 and info.loc[0, "SSHPRNAMT"] == pytest.approx(100.0) and info.loc[0, "VALUE"] == 1000.0
+
+
+def test_no_false_split():
+    cur = pd.DataFrame({"CIK": [str(i) for i in range(12)], "CUSIP": "H", "SH": [50.0] * 6 + [100.0] * 6, "VAL": 1.0})
+    prv = cur.assign(SH=100.0)
+    assert panel.splits(cur, prv).empty                      # half of holders halving is selling, not a split
+    cur2 = cur.assign(SH=200.0)
+    assert list(panel.splits(cur2, prv).values) == [2.0]    # everyone doubling is a 2:1 split
