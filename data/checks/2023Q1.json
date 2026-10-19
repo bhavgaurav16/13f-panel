@@ -1,11 +1,23 @@
 {
  "quarter": "2023Q1",
+ "review_size_jumps": [
+  {
+   "name": "Greenhaven Road Investment Management, L.P.",
+   "aum": 1742216000.0,
+   "aum_prior": 154972000.0
+  },
+  {
+   "name": "Strengthening Families & Communities, LLC",
+   "aum": 1766438400.5012186,
+   "aum_prior": 167218000.0
+  }
+ ],
  "passed": 1,
  "total": 1,
  "checks": [
   {
    "check": "largest filer below $15tn",
-   "largest": "VANGUARD GROUP INC",
+   "largest": "Vanguard (all filing entities)",
    "aum": 3927500393426.0,
    "result": "pass"
   }
