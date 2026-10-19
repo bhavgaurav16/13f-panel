@@ -127,3 +127,33 @@ def test_no_false_split():
     assert panel.splits(cur, prv).empty                      # half of holders halving is selling, not a split
     cur2 = cur.assign(SH=200.0)
     assert list(panel.splits(cur2, prv).values) == [2.0]    # everyone doubling is a 2:1 split
+
+
+def test_copied_share_field_not_scaled_up():
+    rows = []
+    for cik in ["A", "B", "C", "D"]:
+        for cus, px in (("X00000001", 200.0), ("Y00000001", 50.0), ("Z00000001", 10.0), ("W00000001", 5.0), ("V00000001", 1.0)):
+            rows.append({"CIK": cik, "CUSIP": cus, "SSHPRNAMT": 100.0, "VALUE": 100.0 * px, "SSHPRNAMTTYPE": "SH", "PUTCALL": ""})
+    for r in rows:
+        if r["CIK"] == "A":
+            r["SSHPRNAMT"] = r["VALUE"]          # filer pasted the dollar value into the share field
+    info = pd.DataFrame(rows)
+    info, n = panel.fix_copied_shares(info)
+    info, nfix = panel.fix_units(info)
+    a = info[info.CIK == "A"]
+    assert n == 1 and nfix == 0
+    assert a.VALUE.sum() == pytest.approx(26600.0)             # value untouched, not x1000
+    assert a.SSHPRNAMT.tolist() == pytest.approx([100.0] * 5)  # shares restated from median prices
+
+
+def test_flow_capped_and_aliases(world, monkeypatch):
+    tmp, urls = world
+    monkeypatch.setattr(panel, "load_aliases", lambda: {"0000000004": ["GRP", "Group (all entities)"],
+                                                        "0000000005": ["GRP", "Group (all entities)"]})
+    panel.build("2023Q1", urls, keep_cache=True)
+    f = pd.read_parquet(tmp / "data/features/2023Q1.parquet").set_index("cik")
+    h = pd.read_parquet(tmp / "data/holdings/2023Q1.parquet")
+    assert "GRP" in f.index and f.loc["GRP", "name"] == "Group (all entities)"
+    assert "0000000004" not in f.index
+    cap = 3 * h[["val", "val_p"]].max(axis=1)
+    assert (h.flow.abs() <= cap + 1e-6).all()
