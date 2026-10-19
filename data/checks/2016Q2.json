@@ -1,12 +1,6 @@
 {
  "quarter": "2016Q2",
- "review_size_jumps": [
-  {
-   "name": "ROYAL LONDON ASSET MANAGEMENT LTD",
-   "aum": 6126389000.0,
-   "aum_prior": 69767734020.65
-  }
- ],
+ "review_size_jumps": [],
  "passed": 1,
  "total": 1,
  "checks": [
