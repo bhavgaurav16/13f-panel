@@ -930,16 +930,18 @@
    "total_long_value": 29497057745836.703
   },
   "2020Q3": {
-   "built": "2026-10-19T11:08:28+00:00",
-   "candidates": 2794,
+   "built": "2026-10-19T12:36:11+00:00",
+   "candidates": 2792,
    "checks": {
     "coverpage_filings_compared": 5317,
     "coverpage_value_match_share": 0.9674628549934173,
+    "row_value_fixes": 9770,
+    "rows_zeroed": 0,
     "unit_fixes": 68
    },
    "filers": 5275,
    "has_prior": true,
-   "holding_rows": 221328,
+   "holding_rows": 221102,
    "sec_files": [
     {
      "bytes": 49051852,
@@ -957,7 +959,7 @@
      "sha256": "8ec0c2bd8083bd2a6cb979b746ac205b7eb09d36d33264797067c5fe5f2a80e6"
     }
    ],
-   "total_long_value": 32288563173804.0
+   "total_long_value": 31920415336801.105
   },
   "2020Q4": {
    "built": "2026-10-19T11:09:26+00:00",
