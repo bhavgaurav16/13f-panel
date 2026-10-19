@@ -1,11 +1,28 @@
 {
  "quarter": "2025Q3",
+ "review_size_jumps": [
+  {
+   "name": "VANTAGEPOINT INVESTMENT ADVISERS LLC",
+   "aum": 12247289362.0,
+   "aum_prior": 997064930.0
+  },
+  {
+   "name": "CANERECTOR INC",
+   "aum": 97893092254.7803,
+   "aum_prior": 176333621.0
+  },
+  {
+   "name": "Strategic Wealth Investment Group, LLC",
+   "aum": 1188136391.0,
+   "aum_prior": 69070055.0
+  }
+ ],
  "passed": 1,
  "total": 1,
  "checks": [
   {
    "check": "largest filer below $15tn",
-   "largest": "VANGUARD GROUP INC",
+   "largest": "Vanguard (all filing entities)",
    "aum": 6680394025516.0,
    "result": "pass"
   }
