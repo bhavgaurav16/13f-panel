@@ -1,11 +1,12 @@
 {
  "quarter": "2017Q3",
+ "review_size_jumps": [],
  "passed": 1,
  "total": 1,
  "checks": [
   {
    "check": "largest filer below $15tn",
-   "largest": "VANGUARD GROUP INC",
+   "largest": "Vanguard (all filing entities)",
    "aum": 2139448908000.0,
    "result": "pass"
   }
