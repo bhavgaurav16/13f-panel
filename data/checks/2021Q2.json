@@ -1,42 +1,6 @@
 {
  "quarter": "2021Q2",
- "review_size_jumps": [
-  {
-   "name": "Metropolitan Life Insurance Co/NY",
-   "aum": 6708025000.0,
-   "aum_prior": 5942272.0
-  },
-  {
-   "name": "Index Venture Growth Associates I Ltd",
-   "aum": 1192092000.0,
-   "aum_prior": 90863000.0
-  },
-  {
-   "name": "ADAMCAPITAL Gestao de Recursos Ltda.",
-   "aum": 1133955362326.884,
-   "aum_prior": 832006000.0
-  },
-  {
-   "name": "LIBERTY WEALTH MANAGEMENT LLC",
-   "aum": 3205662754.8308854,
-   "aum_prior": 204769000.0
-  },
-  {
-   "name": "Greenspring Associates, LLC",
-   "aum": 1478829000.0,
-   "aum_prior": 125711000.0
-  },
-  {
-   "name": "Flagship Private Wealth, LLC",
-   "aum": 131116373244.09805,
-   "aum_prior": 119730610.0
-  },
-  {
-   "name": "Weitzel Financial Services, Inc.",
-   "aum": 2840816000.0,
-   "aum_prior": 143058000.0
-  }
- ],
+ "review_size_jumps": [],
  "passed": 1,
  "total": 1,
  "checks": [
