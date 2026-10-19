@@ -157,3 +157,48 @@ def test_flow_capped_and_aliases(world, monkeypatch):
     assert "0000000004" not in f.index
     cap = 3 * h[["val", "val_p"]].max(axis=1)
     assert (h.flow.abs() <= cap + 1e-6).all()
+
+
+def test_copied_fields_judged_per_quarter():
+    rows = []
+    for q in ("2025Q4", "2026Q1"):
+        for cik in "ABCD":
+            for cus, px in (("X00000001", 200.0), ("Y00000001", 50.0), ("Z00000001", 10.0), ("W00000001", 5.0), ("V00000001", 1.0)):
+                v = 100.0 * px
+                sh = v if (cik == "A" and q == "2025Q4") else 100.0     # error in one quarter only
+                rows.append({"Q": q, "CIK": cik, "CUSIP": cus, "SSHPRNAMT": sh, "VALUE": v, "SSHPRNAMTTYPE": "SH", "PUTCALL": ""})
+    info, n = panel.fix_copied_shares(pd.DataFrame(rows))
+    assert n == 1
+    assert info[(info.CIK == "A") & (info.Q == "2025Q4")].SSHPRNAMT.tolist() == pytest.approx([100.0] * 5)
+
+
+def test_split_with_active_traders():
+    n = 20
+    prv = pd.DataFrame({"CIK": [str(i) for i in range(n)], "CUSIP": "N", "SH": 100.0, "VAL": 1.0})
+    sh = [1000.0] * 12 + [1300.0, 700.0, 1500.0, 600.0, 2000.0, 400.0, 1200.0, 100.0]   # 10:1 split, 60% exact, 1 unchanged
+    assert list(panel.splits(prv.assign(SH=sh), prv).values) == [10.0]
+    hon = [50.0] * 9 + [100.0] * 8 + [40.0, 45.0, 55.0]      # median ~0.5 but 40% unchanged: selling, not a split
+    assert panel.splits(prv.assign(SH=hon), prv).empty
+
+
+def test_takeover_is_not_a_sale():
+    ciks = [str(i) for i in range(4)]
+    prv = pd.DataFrame({"CIK": ciks * 2, "CUSIP": ["KEEP"] * 4 + ["GONE"] * 4, "SH": 100.0, "VAL": 1000.0})
+    cur = pd.DataFrame({"CIK": ciks, "CUSIP": "KEEP", "SH": 100.0, "VAL": 1100.0})
+    px = panel.prices(cur, pd.Series({"KEEP": "KEEP CO"}))
+    opts = pd.DataFrame({"PUT": 0.0, "CALL": 0.0}, index=ciks)
+    f, m = panel.features("2026Q1", cur, prv, opts, px, pd.DataFrame({"name": "M", "filed": pd.NaT}, index=ciks))
+    assert set(m.loc[m.CUSIP == "GONE", "STATUS"]) == {"delisted"}
+    assert (m.loc[m.CUSIP == "GONE", "FLOW"] == 0).all() and (f.gross_sells == 0).all()
+
+
+def test_audit_fails_on_bad_tier(tmp_path, monkeypatch):
+    import audit
+    d = tmp_path / "data" / "features"; d.mkdir(parents=True)
+    rows = [{"cik": str(i), "name": f"M{i}", "aum": 2e9, "aum_prior": 2e9, "net_flow_pct": 3.0 if i == 0 else 0.0}
+            for i in range(30)]
+    pd.DataFrame(rows).to_parquet(d / "2026Q1.parquet")
+    monkeypatch.setattr(audit, "DATA", str(tmp_path / "data"))
+    with pytest.raises(SystemExit) as e:
+        audit.main()
+    assert e.value.code == 1
