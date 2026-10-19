@@ -131,18 +131,22 @@ def fix_copied_shares(info):
     """Some filers paste the dollar value into the share-count field too (VALUE == SSHPRNAMT on most lines),
     which looks like 'reported in $000s' and would be wrongly scaled up 1000x. For such filers keep the value
     and restate shares as value / cross-filer median price. Returns (info, number of filers fixed)."""
+    q = info["Q"] if "Q" in info else pd.Series("_", index=info.index)   # always judge one quarter at a time
     sh = (info.SSHPRNAMTTYPE == "SH") & (info.SSHPRNAMT > 0) & (info.VALUE > 0)
     same = sh & (info.VALUE == info.SSHPRNAMT)
-    share = same.groupby(info.CIK).sum() / sh.groupby(info.CIK).sum().clip(lower=1)
-    n = sh.groupby(info.CIK).sum()
-    filers = share[(share >= 0.5) & (n >= 5)].index
-    if len(filers):
-        eq = info[sh & (info.PUTCALL == "") & ~info.CIK.isin(filers)]
-        med = (eq.VALUE / eq.SSHPRNAMT).groupby(eq.CUSIP).median()
-        m = info.CIK.isin(filers) & sh
-        px = info.loc[m, "CUSIP"].map(med)
-        info.loc[m & px.reindex(info.index).notna(), "SSHPRNAMT"] = (info.loc[m, "VALUE"] / px).dropna()
-    return info, int(len(filers))
+    key = [info.CIK, q]
+    share = same.groupby(key).sum() / sh.groupby(key).sum().clip(lower=1)
+    n = sh.groupby(key).sum()
+    bad = share[(share >= 0.5) & (n >= 5)].index
+    if len(bad):
+        flag = pd.MultiIndex.from_arrays([info.CIK, q]).isin(bad)
+        eq = info[sh & (info.PUTCALL == "") & ~flag]
+        med = (eq.VALUE / eq.SSHPRNAMT).groupby([eq.CUSIP, q[eq.index]]).median()
+        m = flag & sh
+        px = pd.Series(pd.MultiIndex.from_arrays([info.CUSIP[m], q[m]]).map(med.to_dict()).values, index=info.index[m])
+        ok = px.notna()
+        info.loc[px.index[ok], "SSHPRNAMT"] = info.loc[px.index[ok], "VALUE"] / px[ok]
+    return info, int(len(bad))
 
 
 def load_aliases():
@@ -176,11 +180,13 @@ def fix_rows(info):
     for that CUSIP (3+ holders) is a data-entry error. Always take the smaller reading: revalue an inflated value
     at shares x median price, or restate inflated shares as value / median price. Lines above
     $1.5tn (larger than any plausible single position) with no usable median are zeroed. Returns counts."""
+    q = info["Q"] if "Q" in info else pd.Series("_", index=info.index)
     sh = (info.SSHPRNAMTTYPE == "SH") & (info.SSHPRNAMT > 0) & (info.VALUE > 0)
     eq = info[sh & (info.PUTCALL == "")]
-    g = (eq.VALUE / eq.SSHPRNAMT).groupby(eq.CUSIP).agg(["median", "count"])
-    med = info.CUSIP.map(g["median"])
-    cnt = info.CUSIP.map(g["count"]).fillna(0)
+    g = (eq.VALUE / eq.SSHPRNAMT).groupby([eq.CUSIP, q[eq.index]]).agg(["median", "count"])
+    idx = pd.MultiIndex.from_arrays([info.CUSIP, q])
+    med = pd.Series(idx.map(g["median"].to_dict()).values, index=info.index, dtype="float64")
+    cnt = pd.Series(idx.map(g["count"].to_dict()).values, index=info.index, dtype="float64").fillna(0)
     ratio = info.VALUE / (info.SSHPRNAMT * med)
     hi = sh & (cnt >= 3) & (ratio > 50)     # value typo: revalue at shares x median price
     lo = sh & (cnt >= 3) & (ratio < 0.02)   # share-count typo (or value in $000s): keep value, restate shares
@@ -216,6 +222,9 @@ def compute_quarter(info, names, q):
     aum = cur.groupby("CIK")["VAL"].sum()
     aum_p = prv.groupby("CIK")["VAL"].sum()
     both = aum.index.intersection(aum_p.index)
+    jump = aum.reindex(both) / aum_p.reindex(both)
+    discontinuous = jump[(jump > 10) | (jump < 0.1)].index   # semi-annual filers (e.g. Norges), entity moves, typos
+    both = both.difference(discontinuous)
     new_filers = aum.index.difference(aum_p.index)
     gone_filers = aum_p.index.difference(aum.index)
 
@@ -243,7 +252,9 @@ def compute_quarter(info, names, q):
     common = np.array([1/20, 1/10, 1/8, 1/5, 1/4, 1/3, 1/2, 2, 3, 4, 5, 6, 8, 10, 15, 20, 25, 30, 40, 50])
     split = split.map(lambda r: common[np.argmin(np.abs(np.log(common / r)))] if np.min(np.abs(np.log(common / r))) < 0.08 else np.nan).dropna()
     near = (np.abs(np.log(hr / hold.CUSIP.map(split))) < 0.1).groupby(hold.CUSIP).mean()
-    split = split[near.reindex(split.index).fillna(0) >= 0.7]
+    same = (np.abs(np.log(hr)) < 0.1).groupby(hold.CUSIP).mean()
+    nr, sm = near.reindex(split.index).fillna(0), same.reindex(split.index).fillna(1)
+    split = split[((nr >= 0.4) & (sm <= 0.25)) | (nr >= 0.6)]
     m["ADJ"] = m.CUSIP.map(split).fillna(1.0)
     m["SH_P"] = m.SH_P * m.ADJ
 
@@ -254,15 +265,18 @@ def compute_quarter(info, names, q):
     cap = 3 * np.maximum(m.VAL, m.VAL_P)          # guardrail against share-count typos
     m["FLOW"] = np.clip(m.FLOW, -cap, cap)
     m.loc[m.DSH.abs() < 1, "FLOW"] = 0.0
+    gone = ~m.CUSIP.isin(set(cur.loc[cur.SH > 0, "CUSIP"]))     # takeovers/delistings: corporate events, not sales
+    m.loc[gone, "FLOW"] = 0.0
     m["TIER"] = m.CIK.map(tier)
     m["NEW"] = (m.SH_P <= 0) & (m.SH > 0)
-    m["EXIT"] = (m.SH_P > 0) & (m.SH <= 0)
+    m["EXIT"] = (m.SH_P > 0) & (m.SH <= 0) & ~gone
     m["ETF"] = m.CUSIP.map(issuer).fillna("").str.contains(ETF_PAT)
 
     out = {"quarter": q, "prior": pq, "generated": dt.date.today().isoformat(),
            "splits_adjusted": {issuer.get(k, k): float(v) for k, v in split.items()},
-           "universe": {"filers": int(len(aum)), "continuing": int(len(both)),
-                        "new_filers": int(len(new_filers)), "dropped_filers": int(len(gone_filers))},
+           "universe": {"filers": int(len(aum)), "continuing": int(len(both)), "excluded_discontinuous": int(len(discontinuous)),
+                        "new_filers": int(len(new_filers)), "dropped_filers": int(len(gone_filers)),
+                        "delisted_securities": int(m.loc[gone, "CUSIP"].nunique())},
            "tiers": {}, "managers": []}
 
     tier_keys = [t[0] for t in TIERS] + ["all"]
