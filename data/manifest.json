@@ -1122,16 +1122,18 @@
    "total_long_value": 46591395423000.66
   },
   "2022Q1": {
-   "built": "2026-10-19T11:14:53+00:00",
+   "built": "2026-10-19T12:41:06+00:00",
    "candidates": 3374,
    "checks": {
     "coverpage_filings_compared": 6733,
     "coverpage_value_match_share": 0.9685132927372643,
+    "row_value_fixes": 11254,
+    "rows_zeroed": 0,
     "unit_fixes": 75
    },
    "filers": 6682,
    "has_prior": true,
-   "holding_rows": 273627,
+   "holding_rows": 273419,
    "sec_files": [
     {
      "bytes": 64100013,
@@ -1149,7 +1151,7 @@
      "sha256": "f09e3588a93aa5fca7bef17009be924de9c3c5179b36c5c8749d3cb0f7fc61ad"
     }
    ],
-   "total_long_value": 43182557174995.0
+   "total_long_value": 43089343604204.55
   },
   "2022Q2": {
    "built": "2026-10-19T11:15:58+00:00",
