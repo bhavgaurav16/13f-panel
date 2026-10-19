@@ -20,3 +20,10 @@ if [ -n "$QS" ] || [ ! -f data/dashboard/history.json ]; then
   git add data/dashboard && git commit -q -m "dashboard history" || true
   git pull -q --rebase && git push -q
 fi
+# whole-history audit: commits its report, then fails the run (red X) if any guardrail is breached
+set +e
+python pipeline/audit.py; RC=$?
+set -e
+git add data/audit.json && git commit -q -m "audit" || true
+git pull -q --rebase && git push -q
+exit $RC
