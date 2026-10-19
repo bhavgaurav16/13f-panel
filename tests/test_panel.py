@@ -46,6 +46,8 @@ def world(tmp_path, monkeypatch):
                   ("CCC LTD", "CCC000001", 500, 10)]
         if i == 1:  # reports $000s in Q1
             r1 = [(n, c, v / 1000, sh) for n, c, v, sh in r1]
+        if i == 2:  # reports 1000x too large in Q1 (needs dividing, giving non-integer values)
+            r1 = [(n, c, int(v * 1000 + 7), sh) for n, c, v, sh in r1]
         q4 += book(a4, cik, r4); q1 += book(a1, cik, r1)
         sm.append([a4, sum(r[2] for r in r4), len(r4)]); sm.append([a1, sum(r[2] for r in r1), len(r1)])
     make_zip(tmp_path / "cache" / "01dec2022-28feb2023_form13f.zip", s4, q4, [x for x in sm if x[0].startswith("A4")])
@@ -78,8 +80,23 @@ def test_build(world):
     assert ha.loc["BBB000001", "status"] == "exit"
     assert ha.loc["DDD000001", "status"] == "unchanged"            # 2:1 split detected, not a buy
     assert ha.loc["AAA000001", "flow"] == pytest.approx(20 * 11)     # 20 shares x median price 11
-    assert f.loc["0000000002"].aum == pytest.approx(f.loc["0000000003"].aum)  # $000s filer rescaled
-    assert man["checks"]["unit_fixes"] == 1
+    assert f.loc["0000000002"].aum == pytest.approx(f.loc["0000000004"].aum)  # $000s filer rescaled
+    assert man["checks"]["unit_fixes"] == 2
+    assert f.loc["0000000003"].aum == pytest.approx(f.loc["0000000004"].aum, rel=1e-3)
     assert man["checks"]["coverpage_value_match_share"] == 1.0
     assert 0 < a.eff_n <= 3 and a.top10_wt == pytest.approx(1.0)
     assert f.is_candidate.all()
+
+
+def test_fix_units_integer_input():
+    # Real SEC files parse VALUE as int64; dividing one filer by 1000 must not fail (pandas 3 raised TypeError)
+    rows = []
+    for cik in ["A", "B", "C", "D"]:
+        for cus, px in (("X00000001", 10), ("Y00000001", 50)):
+            v = px * 100 * (1000 if cik == "A" else 1) + (7 if cik == "A" else 0)
+            rows.append({"CIK": cik, "CUSIP": cus, "SSHPRNAMT": "100", "VALUE": str(v), "SSHPRNAMTTYPE": "SH", "PUTCALL": ""})
+    info = pd.DataFrame(rows)
+    info["VALUE"] = pd.to_numeric(info["VALUE"], errors="coerce").fillna(0.0).astype("float64")
+    info["SSHPRNAMT"] = pd.to_numeric(info["SSHPRNAMT"], errors="coerce").fillna(0.0).astype("float64")
+    info, n = panel.fix_units(info)
+    assert n == 1 and info[info.CIK == "A"].VALUE.sum() == pytest.approx(6000.014)
