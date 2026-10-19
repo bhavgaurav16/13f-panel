@@ -1,11 +1,28 @@
 {
  "quarter": "2025Q1",
+ "review_size_jumps": [
+  {
+   "name": "NBC SECURITIES, INC.",
+   "aum": 1172524000.0,
+   "aum_prior": 1092710.0
+  },
+  {
+   "name": "New Vernon Capital Holdings II LLC",
+   "aum": 4375176000.0,
+   "aum_prior": 145379385.0
+  },
+  {
+   "name": "Spear Holdings RSC Ltd",
+   "aum": 1298917045.0,
+   "aum_prior": 0.0
+  }
+ ],
  "passed": 1,
  "total": 1,
  "checks": [
   {
    "check": "largest filer below $15tn",
-   "largest": "VANGUARD GROUP INC",
+   "largest": "Vanguard (all filing entities)",
    "aum": 5531119721493.0,
    "result": "pass"
   }
