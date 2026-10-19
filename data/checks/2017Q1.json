@@ -1,37 +1,6 @@
 {
  "quarter": "2017Q1",
- "review_size_jumps": [
-  {
-   "name": "MML INVESTORS SERVICES, LLC",
-   "aum": 4946524454.3178835,
-   "aum_prior": 89257000.0
-  },
-  {
-   "name": "OPPENHEIMER ASSET MANAGEMENT INC.",
-   "aum": 3510406000.0,
-   "aum_prior": 194000.0
-  },
-  {
-   "name": "Magnetar Financial LLC",
-   "aum": 5522939000.0,
-   "aum_prior": 130488000.0
-  },
-  {
-   "name": "BlackRock Inc.",
-   "aum": 1809722560000.0,
-   "aum_prior": 70303343000.0
-  },
-  {
-   "name": "HPM Partners LLC",
-   "aum": 1195041918.0113034,
-   "aum_prior": 72666000.0
-  },
-  {
-   "name": "Karp Capital Management Corp",
-   "aum": 14621053000.0,
-   "aum_prior": 151642000.0
-  }
- ],
+ "review_size_jumps": [],
  "passed": 1,
  "total": 1,
  "checks": [
