@@ -1,37 +1,6 @@
 {
  "quarter": "2022Q4",
- "review_size_jumps": [
-  {
-   "name": "Jefferies Financial Group Inc.",
-   "aum": 5511047928.0,
-   "aum_prior": 130895000.0
-  },
-  {
-   "name": "NORGES BANK",
-   "aum": 414862674207.0,
-   "aum_prior": 0.0
-  },
-  {
-   "name": "Wright Fund Management, LLC",
-   "aum": 1577675468.0,
-   "aum_prior": 5040000.0
-  },
-  {
-   "name": "Cottage Street Advisors LLC",
-   "aum": 19021824480.0,
-   "aum_prior": 121920000.0
-  },
-  {
-   "name": "Optiver Holding B.V.",
-   "aum": 1650056096.0,
-   "aum_prior": 109404767000.0
-  },
-  {
-   "name": "Gibson Wealth Advisors LLC",
-   "aum": 5092607000.0,
-   "aum_prior": 86002000.0
-  }
- ],
+ "review_size_jumps": [],
  "passed": 1,
  "total": 1,
  "checks": [
