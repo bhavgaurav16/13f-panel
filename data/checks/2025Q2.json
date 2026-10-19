@@ -1,42 +1,6 @@
 {
  "quarter": "2025Q2",
- "review_size_jumps": [
-  {
-   "name": "POTOMAC FUND MANAGEMENT INC /ADV",
-   "aum": 1749834845.0,
-   "aum_prior": 97368600.0
-  },
-  {
-   "name": "NORGES BANK",
-   "aum": 801148788270.0,
-   "aum_prior": 0.0
-  },
-  {
-   "name": "IDG China Capital Fund III Associates L.P.",
-   "aum": 2208968908.0,
-   "aum_prior": 66127246.0
-  },
-  {
-   "name": "Galileo (PTC) Ltd",
-   "aum": 1859793990.0,
-   "aum_prior": 65349702.0
-  },
-  {
-   "name": "Mizuho Markets Cayman LP",
-   "aum": 1394870284.0,
-   "aum_prior": 23999142.0
-  },
-  {
-   "name": "Saudi Central Bank",
-   "aum": 2451926277.0,
-   "aum_prior": 18884763.0
-  },
-  {
-   "name": "Susquehanna Portfolio Strategies, LLC",
-   "aum": 4579335081.0,
-   "aum_prior": 232550703.0
-  }
- ],
+ "review_size_jumps": [],
  "passed": 1,
  "total": 1,
  "checks": [
