@@ -1,5 +1,5 @@
 {
- "latest": "2014Q2",
+ "latest": "2014Q3",
  "quarters": {
   "2013Q2": {
    "built": "2026-10-19T10:44:19+00:00",
@@ -150,6 +150,36 @@
     }
    ],
    "total_long_value": 20877513379578.0
+  },
+  "2014Q3": {
+   "built": "2026-10-19T10:48:03+00:00",
+   "candidates": 2262,
+   "checks": {
+    "coverpage_filings_compared": 3741,
+    "coverpage_value_match_share": 0.9609730018711574,
+    "unit_fixes": 70
+   },
+   "filers": 3686,
+   "has_prior": true,
+   "holding_rows": 185207,
+   "sec_files": [
+    {
+     "bytes": 39558922,
+     "name": "2014q3_form13f.zip",
+     "sha256": "32959be32cc31c2aba9a7420976463efa6d620fef0369335d29a4635c5c0d417"
+    },
+    {
+     "bytes": 39130598,
+     "name": "2014q4_form13f.zip",
+     "sha256": "2e51b1f7e9b7d3678524faa3e4e10c2645468712e5bb5808b124951781027c13"
+    },
+    {
+     "bytes": 42434965,
+     "name": "2015q1_form13f.zip",
+     "sha256": "96ab4cb60063beb98317ce3e2558b3539546e54485fdb1c68adcd33b5634a6ee"
+    }
+   ],
+   "total_long_value": 20835191729666.0
   }
  }
 }
