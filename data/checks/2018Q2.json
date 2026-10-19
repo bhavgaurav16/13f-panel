@@ -1,11 +1,23 @@
 {
  "quarter": "2018Q2",
+ "review_size_jumps": [
+  {
+   "name": "Truepoint, Inc.",
+   "aum": 1111335000.0,
+   "aum_prior": 12831433.707352184
+  },
+  {
+   "name": "Cornerstone Wealth Management, LLC",
+   "aum": 8802107907.125666,
+   "aum_prior": 524189000.0
+  }
+ ],
  "passed": 1,
  "total": 1,
  "checks": [
   {
    "check": "largest filer below $15tn",
-   "largest": "VANGUARD GROUP INC",
+   "largest": "Vanguard (all filing entities)",
    "aum": 2390611653000.0,
    "result": "pass"
   }
