@@ -1,6 +1,13 @@
 {
  "quarter": "2013Q3",
- "passed": 0,
- "total": 0,
- "checks": []
+ "passed": 1,
+ "total": 1,
+ "checks": [
+  {
+   "check": "largest filer below $15tn",
+   "largest": "Vanguard Group Inc",
+   "aum": 1023894398000.0,
+   "result": "pass"
+  }
+ ]
 }
