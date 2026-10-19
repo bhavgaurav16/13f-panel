@@ -1,37 +1,6 @@
 {
  "quarter": "2021Q4",
- "review_size_jumps": [
-  {
-   "name": "Amazon com Inc",
-   "aum": 17023456000.0,
-   "aum_prior": 490200000.0
-  },
-  {
-   "name": "NORGES BANK",
-   "aum": 486356979000.0,
-   "aum_prior": 0.0
-  },
-  {
-   "name": "Crestview Partners II GP, L.P.",
-   "aum": 1235762000.0,
-   "aum_prior": 93841000.0
-  },
-  {
-   "name": "Knighthead Capital Management, LLC",
-   "aum": 4775396000.0,
-   "aum_prior": 253607000.0
-  },
-  {
-   "name": "Searchlight Capital Partners, L.P.",
-   "aum": 4117264000.0,
-   "aum_prior": 354667000.0
-  },
-  {
-   "name": "Financial Gravity Asset Management, Inc.",
-   "aum": 1878428189.041158,
-   "aum_prior": 157641608.15015492
-  }
- ],
+ "review_size_jumps": [],
  "passed": 1,
  "total": 1,
  "checks": [
