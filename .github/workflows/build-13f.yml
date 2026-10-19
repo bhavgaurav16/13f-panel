@@ -1,0 +1,37 @@
+name: build-13f
+on:
+  workflow_dispatch:
+    inputs:
+      start:
+        description: "First quarter to (re)build, e.g. 2013Q2. Blank = only missing quarters"
+        required: false
+        default: ""
+      end:
+        description: "Last quarter. Blank = latest complete quarter on sec.gov"
+        required: false
+        default: ""
+  schedule:
+    - cron: "23 6 * * 1"   # Mondays 06:23 UTC; does nothing if no new SEC data
+permissions:
+  contents: write
+concurrency:
+  group: build-13f
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Unit tests
+        run: python -m pytest -q tests
+      - name: Build quarters
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          START: ${{ inputs.start }}
+          END: ${{ inputs.end }}
+        run: bash scripts/run.sh
