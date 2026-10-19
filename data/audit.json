@@ -1,0 +1,1048 @@
+{
+ "passed": true,
+ "failures": [],
+ "warnings": [],
+ "quarters": 53,
+ "tiers": [
+  {
+   "quarter": "2013Q3",
+   "tier": "t100m",
+   "net_flow_pct": -0.7
+  },
+  {
+   "quarter": "2013Q3",
+   "tier": "t10b",
+   "net_flow_pct": 1.17
+  },
+  {
+   "quarter": "2013Q3",
+   "tier": "t1b",
+   "net_flow_pct": 0.08
+  },
+  {
+   "quarter": "2013Q3",
+   "tier": "top10",
+   "net_flow_pct": -0.96
+  },
+  {
+   "quarter": "2013Q4",
+   "tier": "t100m",
+   "net_flow_pct": -0.36
+  },
+  {
+   "quarter": "2013Q4",
+   "tier": "t10b",
+   "net_flow_pct": 1.4
+  },
+  {
+   "quarter": "2013Q4",
+   "tier": "t1b",
+   "net_flow_pct": 0.47
+  },
+  {
+   "quarter": "2013Q4",
+   "tier": "top10",
+   "net_flow_pct": 1.7
+  },
+  {
+   "quarter": "2014Q1",
+   "tier": "t100m",
+   "net_flow_pct": 0.19
+  },
+  {
+   "quarter": "2014Q1",
+   "tier": "t10b",
+   "net_flow_pct": 0.43
+  },
+  {
+   "quarter": "2014Q1",
+   "tier": "t1b",
+   "net_flow_pct": -0.56
+  },
+  {
+   "quarter": "2014Q1",
+   "tier": "top10",
+   "net_flow_pct": -6.98
+  },
+  {
+   "quarter": "2014Q2",
+   "tier": "t100m",
+   "net_flow_pct": 2.5
+  },
+  {
+   "quarter": "2014Q2",
+   "tier": "t10b",
+   "net_flow_pct": 3.1
+  },
+  {
+   "quarter": "2014Q2",
+   "tier": "t1b",
+   "net_flow_pct": 3.24
+  },
+  {
+   "quarter": "2014Q2",
+   "tier": "top10",
+   "net_flow_pct": 3.31
+  },
+  {
+   "quarter": "2014Q3",
+   "tier": "t100m",
+   "net_flow_pct": 0.64
+  },
+  {
+   "quarter": "2014Q3",
+   "tier": "t10b",
+   "net_flow_pct": 0.61
+  },
+  {
+   "quarter": "2014Q3",
+   "tier": "t1b",
+   "net_flow_pct": 1.46
+  },
+  {
+   "quarter": "2014Q3",
+   "tier": "top10",
+   "net_flow_pct": 0.59
+  },
+  {
+   "quarter": "2014Q4",
+   "tier": "t100m",
+   "net_flow_pct": -1.63
+  },
+  {
+   "quarter": "2014Q4",
+   "tier": "t10b",
+   "net_flow_pct": -0.1
+  },
+  {
+   "quarter": "2014Q4",
+   "tier": "t1b",
+   "net_flow_pct": -0.45
+  },
+  {
+   "quarter": "2014Q4",
+   "tier": "top10",
+   "net_flow_pct": 1.72
+  },
+  {
+   "quarter": "2015Q1",
+   "tier": "t100m",
+   "net_flow_pct": -0.39
+  },
+  {
+   "quarter": "2015Q1",
+   "tier": "t10b",
+   "net_flow_pct": 0.09
+  },
+  {
+   "quarter": "2015Q1",
+   "tier": "t1b",
+   "net_flow_pct": -1.52
+  },
+  {
+   "quarter": "2015Q1",
+   "tier": "top10",
+   "net_flow_pct": 0.56
+  },
+  {
+   "quarter": "2015Q2",
+   "tier": "t100m",
+   "net_flow_pct": 0.38
+  },
+  {
+   "quarter": "2015Q2",
+   "tier": "t10b",
+   "net_flow_pct": 1.22
+  },
+  {
+   "quarter": "2015Q2",
+   "tier": "t1b",
+   "net_flow_pct": 2.36
+  },
+  {
+   "quarter": "2015Q2",
+   "tier": "top10",
+   "net_flow_pct": -0.62
+  },
+  {
+   "quarter": "2015Q3",
+   "tier": "t100m",
+   "net_flow_pct": -0.09
+  },
+  {
+   "quarter": "2015Q3",
+   "tier": "t10b",
+   "net_flow_pct": 1.39
+  },
+  {
+   "quarter": "2015Q3",
+   "tier": "t1b",
+   "net_flow_pct": 0.62
+  },
+  {
+   "quarter": "2015Q3",
+   "tier": "top10",
+   "net_flow_pct": 2.23
+  },
+  {
+   "quarter": "2015Q4",
+   "tier": "t100m",
+   "net_flow_pct": -2.21
+  },
+  {
+   "quarter": "2015Q4",
+   "tier": "t10b",
+   "net_flow_pct": -1.31
+  },
+  {
+   "quarter": "2015Q4",
+   "tier": "t1b",
+   "net_flow_pct": -1.53
+  },
+  {
+   "quarter": "2015Q4",
+   "tier": "top10",
+   "net_flow_pct": 1.54
+  },
+  {
+   "quarter": "2016Q1",
+   "tier": "t100m",
+   "net_flow_pct": -0.8
+  },
+  {
+   "quarter": "2016Q1",
+   "tier": "t10b",
+   "net_flow_pct": -2.22
+  },
+  {
+   "quarter": "2016Q1",
+   "tier": "t1b",
+   "net_flow_pct": -2.03
+  },
+  {
+   "quarter": "2016Q1",
+   "tier": "top10",
+   "net_flow_pct": 0.69
+  },
+  {
+   "quarter": "2016Q2",
+   "tier": "t100m",
+   "net_flow_pct": -2.06
+  },
+  {
+   "quarter": "2016Q2",
+   "tier": "t10b",
+   "net_flow_pct": 0.7
+  },
+  {
+   "quarter": "2016Q2",
+   "tier": "t1b",
+   "net_flow_pct": -2.3
+  },
+  {
+   "quarter": "2016Q2",
+   "tier": "top10",
+   "net_flow_pct": 0.26
+  },
+  {
+   "quarter": "2016Q3",
+   "tier": "t100m",
+   "net_flow_pct": -0.82
+  },
+  {
+   "quarter": "2016Q3",
+   "tier": "t10b",
+   "net_flow_pct": -0.57
+  },
+  {
+   "quarter": "2016Q3",
+   "tier": "t1b",
+   "net_flow_pct": -0.97
+  },
+  {
+   "quarter": "2016Q3",
+   "tier": "top10",
+   "net_flow_pct": 1.26
+  },
+  {
+   "quarter": "2016Q4",
+   "tier": "t100m",
+   "net_flow_pct": -1.55
+  },
+  {
+   "quarter": "2016Q4",
+   "tier": "t10b",
+   "net_flow_pct": 0.26
+  },
+  {
+   "quarter": "2016Q4",
+   "tier": "t1b",
+   "net_flow_pct": -0.61
+  },
+  {
+   "quarter": "2016Q4",
+   "tier": "top10",
+   "net_flow_pct": 6.36
+  },
+  {
+   "quarter": "2017Q1",
+   "tier": "t100m",
+   "net_flow_pct": -0.61
+  },
+  {
+   "quarter": "2017Q1",
+   "tier": "t10b",
+   "net_flow_pct": 0.97
+  },
+  {
+   "quarter": "2017Q1",
+   "tier": "t1b",
+   "net_flow_pct": -1.35
+  },
+  {
+   "quarter": "2017Q1",
+   "tier": "top10",
+   "net_flow_pct": 0.8
+  },
+  {
+   "quarter": "2017Q2",
+   "tier": "t100m",
+   "net_flow_pct": 0.07
+  },
+  {
+   "quarter": "2017Q2",
+   "tier": "t10b",
+   "net_flow_pct": -3.22
+  },
+  {
+   "quarter": "2017Q2",
+   "tier": "t1b",
+   "net_flow_pct": -0.07
+  },
+  {
+   "quarter": "2017Q2",
+   "tier": "top10",
+   "net_flow_pct": 0.23
+  },
+  {
+   "quarter": "2017Q3",
+   "tier": "t100m",
+   "net_flow_pct": -1.44
+  },
+  {
+   "quarter": "2017Q3",
+   "tier": "t10b",
+   "net_flow_pct": 0.76
+  },
+  {
+   "quarter": "2017Q3",
+   "tier": "t1b",
+   "net_flow_pct": 0.27
+  },
+  {
+   "quarter": "2017Q3",
+   "tier": "top10",
+   "net_flow_pct": 1.58
+  },
+  {
+   "quarter": "2017Q4",
+   "tier": "t100m",
+   "net_flow_pct": -0.69
+  },
+  {
+   "quarter": "2017Q4",
+   "tier": "t10b",
+   "net_flow_pct": 2.01
+  },
+  {
+   "quarter": "2017Q4",
+   "tier": "t1b",
+   "net_flow_pct": -0.68
+  },
+  {
+   "quarter": "2017Q4",
+   "tier": "top10",
+   "net_flow_pct": -0.33
+  },
+  {
+   "quarter": "2018Q1",
+   "tier": "t100m",
+   "net_flow_pct": 0.49
+  },
+  {
+   "quarter": "2018Q1",
+   "tier": "t10b",
+   "net_flow_pct": -0.97
+  },
+  {
+   "quarter": "2018Q1",
+   "tier": "t1b",
+   "net_flow_pct": 0.44
+  },
+  {
+   "quarter": "2018Q1",
+   "tier": "top10",
+   "net_flow_pct": -0.46
+  },
+  {
+   "quarter": "2018Q2",
+   "tier": "t100m",
+   "net_flow_pct": -0.86
+  },
+  {
+   "quarter": "2018Q2",
+   "tier": "t10b",
+   "net_flow_pct": 0.41
+  },
+  {
+   "quarter": "2018Q2",
+   "tier": "t1b",
+   "net_flow_pct": -0.64
+  },
+  {
+   "quarter": "2018Q2",
+   "tier": "top10",
+   "net_flow_pct": 0.41
+  },
+  {
+   "quarter": "2018Q3",
+   "tier": "t100m",
+   "net_flow_pct": -0.71
+  },
+  {
+   "quarter": "2018Q3",
+   "tier": "t10b",
+   "net_flow_pct": 2.41
+  },
+  {
+   "quarter": "2018Q3",
+   "tier": "t1b",
+   "net_flow_pct": -1.0
+  },
+  {
+   "quarter": "2018Q3",
+   "tier": "top10",
+   "net_flow_pct": 9.27
+  },
+  {
+   "quarter": "2018Q4",
+   "tier": "t100m",
+   "net_flow_pct": -1.2
+  },
+  {
+   "quarter": "2018Q4",
+   "tier": "t10b",
+   "net_flow_pct": -1.04
+  },
+  {
+   "quarter": "2018Q4",
+   "tier": "t1b",
+   "net_flow_pct": -1.8
+  },
+  {
+   "quarter": "2018Q4",
+   "tier": "top10",
+   "net_flow_pct": 3.78
+  },
+  {
+   "quarter": "2019Q1",
+   "tier": "t100m",
+   "net_flow_pct": -0.46
+  },
+  {
+   "quarter": "2019Q1",
+   "tier": "t10b",
+   "net_flow_pct": -4.02
+  },
+  {
+   "quarter": "2019Q1",
+   "tier": "t1b",
+   "net_flow_pct": -0.13
+  },
+  {
+   "quarter": "2019Q1",
+   "tier": "top10",
+   "net_flow_pct": 0.75
+  },
+  {
+   "quarter": "2019Q2",
+   "tier": "t100m",
+   "net_flow_pct": 0.16
+  },
+  {
+   "quarter": "2019Q2",
+   "tier": "t10b",
+   "net_flow_pct": 3.11
+  },
+  {
+   "quarter": "2019Q2",
+   "tier": "t1b",
+   "net_flow_pct": 1.39
+  },
+  {
+   "quarter": "2019Q2",
+   "tier": "top10",
+   "net_flow_pct": 0.72
+  },
+  {
+   "quarter": "2019Q3",
+   "tier": "t100m",
+   "net_flow_pct": -1.33
+  },
+  {
+   "quarter": "2019Q3",
+   "tier": "t10b",
+   "net_flow_pct": -1.51
+  },
+  {
+   "quarter": "2019Q3",
+   "tier": "t1b",
+   "net_flow_pct": -1.84
+  },
+  {
+   "quarter": "2019Q3",
+   "tier": "top10",
+   "net_flow_pct": 0.17
+  },
+  {
+   "quarter": "2019Q4",
+   "tier": "t100m",
+   "net_flow_pct": -0.13
+  },
+  {
+   "quarter": "2019Q4",
+   "tier": "t10b",
+   "net_flow_pct": -0.12
+  },
+  {
+   "quarter": "2019Q4",
+   "tier": "t1b",
+   "net_flow_pct": -0.99
+  },
+  {
+   "quarter": "2019Q4",
+   "tier": "top10",
+   "net_flow_pct": 4.89
+  },
+  {
+   "quarter": "2020Q1",
+   "tier": "t100m",
+   "net_flow_pct": -0.33
+  },
+  {
+   "quarter": "2020Q1",
+   "tier": "t10b",
+   "net_flow_pct": 0.34
+  },
+  {
+   "quarter": "2020Q1",
+   "tier": "t1b",
+   "net_flow_pct": -0.79
+  },
+  {
+   "quarter": "2020Q1",
+   "tier": "top10",
+   "net_flow_pct": -2.25
+  },
+  {
+   "quarter": "2020Q2",
+   "tier": "t100m",
+   "net_flow_pct": -0.26
+  },
+  {
+   "quarter": "2020Q2",
+   "tier": "t10b",
+   "net_flow_pct": -0.58
+  },
+  {
+   "quarter": "2020Q2",
+   "tier": "t1b",
+   "net_flow_pct": 0.37
+  },
+  {
+   "quarter": "2020Q2",
+   "tier": "top10",
+   "net_flow_pct": 0.63
+  },
+  {
+   "quarter": "2020Q3",
+   "tier": "t100m",
+   "net_flow_pct": 1.04
+  },
+  {
+   "quarter": "2020Q3",
+   "tier": "t10b",
+   "net_flow_pct": 0.16
+  },
+  {
+   "quarter": "2020Q3",
+   "tier": "t1b",
+   "net_flow_pct": 2.2
+  },
+  {
+   "quarter": "2020Q3",
+   "tier": "top10",
+   "net_flow_pct": 0.36
+  },
+  {
+   "quarter": "2020Q4",
+   "tier": "t100m",
+   "net_flow_pct": -0.81
+  },
+  {
+   "quarter": "2020Q4",
+   "tier": "t10b",
+   "net_flow_pct": 2.44
+  },
+  {
+   "quarter": "2020Q4",
+   "tier": "t1b",
+   "net_flow_pct": 3.57
+  },
+  {
+   "quarter": "2020Q4",
+   "tier": "top10",
+   "net_flow_pct": 0.47
+  },
+  {
+   "quarter": "2021Q1",
+   "tier": "t100m",
+   "net_flow_pct": 1.62
+  },
+  {
+   "quarter": "2021Q1",
+   "tier": "t10b",
+   "net_flow_pct": -0.75
+  },
+  {
+   "quarter": "2021Q1",
+   "tier": "t1b",
+   "net_flow_pct": 3.07
+  },
+  {
+   "quarter": "2021Q1",
+   "tier": "top10",
+   "net_flow_pct": 1.95
+  },
+  {
+   "quarter": "2021Q2",
+   "tier": "t100m",
+   "net_flow_pct": 1.39
+  },
+  {
+   "quarter": "2021Q2",
+   "tier": "t10b",
+   "net_flow_pct": 1.29
+  },
+  {
+   "quarter": "2021Q2",
+   "tier": "t1b",
+   "net_flow_pct": 1.69
+  },
+  {
+   "quarter": "2021Q2",
+   "tier": "top10",
+   "net_flow_pct": 0.49
+  },
+  {
+   "quarter": "2021Q3",
+   "tier": "t100m",
+   "net_flow_pct": -0.15
+  },
+  {
+   "quarter": "2021Q3",
+   "tier": "t10b",
+   "net_flow_pct": 0.67
+  },
+  {
+   "quarter": "2021Q3",
+   "tier": "t1b",
+   "net_flow_pct": 1.16
+  },
+  {
+   "quarter": "2021Q3",
+   "tier": "top10",
+   "net_flow_pct": 0.23
+  },
+  {
+   "quarter": "2021Q4",
+   "tier": "t100m",
+   "net_flow_pct": 0.58
+  },
+  {
+   "quarter": "2021Q4",
+   "tier": "t10b",
+   "net_flow_pct": 1.55
+  },
+  {
+   "quarter": "2021Q4",
+   "tier": "t1b",
+   "net_flow_pct": 1.81
+  },
+  {
+   "quarter": "2021Q4",
+   "tier": "top10",
+   "net_flow_pct": 1.1
+  },
+  {
+   "quarter": "2022Q1",
+   "tier": "t100m",
+   "net_flow_pct": -1.19
+  },
+  {
+   "quarter": "2022Q1",
+   "tier": "t10b",
+   "net_flow_pct": -1.05
+  },
+  {
+   "quarter": "2022Q1",
+   "tier": "t1b",
+   "net_flow_pct": -0.45
+  },
+  {
+   "quarter": "2022Q1",
+   "tier": "top10",
+   "net_flow_pct": 0.99
+  },
+  {
+   "quarter": "2022Q2",
+   "tier": "t100m",
+   "net_flow_pct": 0.13
+  },
+  {
+   "quarter": "2022Q2",
+   "tier": "t10b",
+   "net_flow_pct": -0.53
+  },
+  {
+   "quarter": "2022Q2",
+   "tier": "t1b",
+   "net_flow_pct": 0.91
+  },
+  {
+   "quarter": "2022Q2",
+   "tier": "top10",
+   "net_flow_pct": 1.24
+  },
+  {
+   "quarter": "2022Q3",
+   "tier": "t100m",
+   "net_flow_pct": -0.48
+  },
+  {
+   "quarter": "2022Q3",
+   "tier": "t10b",
+   "net_flow_pct": 0.64
+  },
+  {
+   "quarter": "2022Q3",
+   "tier": "t1b",
+   "net_flow_pct": -0.32
+  },
+  {
+   "quarter": "2022Q3",
+   "tier": "top10",
+   "net_flow_pct": -1.06
+  },
+  {
+   "quarter": "2022Q4",
+   "tier": "t100m",
+   "net_flow_pct": -0.62
+  },
+  {
+   "quarter": "2022Q4",
+   "tier": "t10b",
+   "net_flow_pct": -0.45
+  },
+  {
+   "quarter": "2022Q4",
+   "tier": "t1b",
+   "net_flow_pct": -1.13
+  },
+  {
+   "quarter": "2022Q4",
+   "tier": "top10",
+   "net_flow_pct": 1.07
+  },
+  {
+   "quarter": "2023Q1",
+   "tier": "t100m",
+   "net_flow_pct": 0.19
+  },
+  {
+   "quarter": "2023Q1",
+   "tier": "t10b",
+   "net_flow_pct": 0.42
+  },
+  {
+   "quarter": "2023Q1",
+   "tier": "t1b",
+   "net_flow_pct": 0.12
+  },
+  {
+   "quarter": "2023Q1",
+   "tier": "top10",
+   "net_flow_pct": 8.63
+  },
+  {
+   "quarter": "2023Q2",
+   "tier": "t100m",
+   "net_flow_pct": 0.14
+  },
+  {
+   "quarter": "2023Q2",
+   "tier": "t10b",
+   "net_flow_pct": -0.58
+  },
+  {
+   "quarter": "2023Q2",
+   "tier": "t1b",
+   "net_flow_pct": -1.06
+  },
+  {
+   "quarter": "2023Q2",
+   "tier": "top10",
+   "net_flow_pct": -7.42
+  },
+  {
+   "quarter": "2023Q3",
+   "tier": "t100m",
+   "net_flow_pct": -0.02
+  },
+  {
+   "quarter": "2023Q3",
+   "tier": "t10b",
+   "net_flow_pct": 0.45
+  },
+  {
+   "quarter": "2023Q3",
+   "tier": "t1b",
+   "net_flow_pct": 0.53
+  },
+  {
+   "quarter": "2023Q3",
+   "tier": "top10",
+   "net_flow_pct": 0.12
+  },
+  {
+   "quarter": "2023Q4",
+   "tier": "t100m",
+   "net_flow_pct": -1.33
+  },
+  {
+   "quarter": "2023Q4",
+   "tier": "t10b",
+   "net_flow_pct": 0.31
+  },
+  {
+   "quarter": "2023Q4",
+   "tier": "t1b",
+   "net_flow_pct": -1.08
+  },
+  {
+   "quarter": "2023Q4",
+   "tier": "top10",
+   "net_flow_pct": 1.28
+  },
+  {
+   "quarter": "2024Q1",
+   "tier": "t100m",
+   "net_flow_pct": -0.24
+  },
+  {
+   "quarter": "2024Q1",
+   "tier": "t10b",
+   "net_flow_pct": 0.15
+  },
+  {
+   "quarter": "2024Q1",
+   "tier": "t1b",
+   "net_flow_pct": -0.71
+  },
+  {
+   "quarter": "2024Q1",
+   "tier": "top10",
+   "net_flow_pct": 8.43
+  },
+  {
+   "quarter": "2024Q2",
+   "tier": "t100m",
+   "net_flow_pct": -0.72
+  },
+  {
+   "quarter": "2024Q2",
+   "tier": "t10b",
+   "net_flow_pct": 1.25
+  },
+  {
+   "quarter": "2024Q2",
+   "tier": "t1b",
+   "net_flow_pct": 1.08
+  },
+  {
+   "quarter": "2024Q2",
+   "tier": "top10",
+   "net_flow_pct": 1.08
+  },
+  {
+   "quarter": "2024Q3",
+   "tier": "t100m",
+   "net_flow_pct": -0.2
+  },
+  {
+   "quarter": "2024Q3",
+   "tier": "t10b",
+   "net_flow_pct": -1.3
+  },
+  {
+   "quarter": "2024Q3",
+   "tier": "t1b",
+   "net_flow_pct": -0.23
+  },
+  {
+   "quarter": "2024Q3",
+   "tier": "top10",
+   "net_flow_pct": 0.05
+  },
+  {
+   "quarter": "2024Q4",
+   "tier": "t100m",
+   "net_flow_pct": -0.9
+  },
+  {
+   "quarter": "2024Q4",
+   "tier": "t10b",
+   "net_flow_pct": 2.0
+  },
+  {
+   "quarter": "2024Q4",
+   "tier": "t1b",
+   "net_flow_pct": 1.07
+  },
+  {
+   "quarter": "2024Q4",
+   "tier": "top10",
+   "net_flow_pct": -4.12
+  },
+  {
+   "quarter": "2025Q1",
+   "tier": "t100m",
+   "net_flow_pct": -0.25
+  },
+  {
+   "quarter": "2025Q1",
+   "tier": "t10b",
+   "net_flow_pct": 0.68
+  },
+  {
+   "quarter": "2025Q1",
+   "tier": "t1b",
+   "net_flow_pct": 0.92
+  },
+  {
+   "quarter": "2025Q1",
+   "tier": "top10",
+   "net_flow_pct": 1.53
+  },
+  {
+   "quarter": "2025Q2",
+   "tier": "t100m",
+   "net_flow_pct": 1.15
+  },
+  {
+   "quarter": "2025Q2",
+   "tier": "t10b",
+   "net_flow_pct": 0.18
+  },
+  {
+   "quarter": "2025Q2",
+   "tier": "t1b",
+   "net_flow_pct": 0.87
+  },
+  {
+   "quarter": "2025Q2",
+   "tier": "top10",
+   "net_flow_pct": 3.22
+  },
+  {
+   "quarter": "2025Q3",
+   "tier": "t100m",
+   "net_flow_pct": 0.02
+  },
+  {
+   "quarter": "2025Q3",
+   "tier": "t10b",
+   "net_flow_pct": -1.31
+  },
+  {
+   "quarter": "2025Q3",
+   "tier": "t1b",
+   "net_flow_pct": 0.92
+  },
+  {
+   "quarter": "2025Q3",
+   "tier": "top10",
+   "net_flow_pct": 7.41
+  },
+  {
+   "quarter": "2025Q4",
+   "tier": "t100m",
+   "net_flow_pct": -0.0
+  },
+  {
+   "quarter": "2025Q4",
+   "tier": "t10b",
+   "net_flow_pct": 2.06
+  },
+  {
+   "quarter": "2025Q4",
+   "tier": "t1b",
+   "net_flow_pct": 0.9
+  },
+  {
+   "quarter": "2025Q4",
+   "tier": "top10",
+   "net_flow_pct": -5.57
+  },
+  {
+   "quarter": "2026Q1",
+   "tier": "t100m",
+   "net_flow_pct": 0.43
+  },
+  {
+   "quarter": "2026Q1",
+   "tier": "t10b",
+   "net_flow_pct": 0.86
+  },
+  {
+   "quarter": "2026Q1",
+   "tier": "t1b",
+   "net_flow_pct": 0.59
+  },
+  {
+   "quarter": "2026Q1",
+   "tier": "top10",
+   "net_flow_pct": 2.09
+  },
+  {
+   "quarter": "2026Q2",
+   "tier": "t100m",
+   "net_flow_pct": 0.5
+  },
+  {
+   "quarter": "2026Q2",
+   "tier": "t10b",
+   "net_flow_pct": 2.74
+  },
+  {
+   "quarter": "2026Q2",
+   "tier": "t1b",
+   "net_flow_pct": 1.25
+  },
+  {
+   "quarter": "2026Q2",
+   "tier": "top10",
+   "net_flow_pct": 1.67
+  }
+ ]
+}
