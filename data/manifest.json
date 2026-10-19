@@ -450,11 +450,13 @@
    "total_long_value": 21621214772702.914
   },
   "2016Q4": {
-   "built": "2026-10-19T10:55:17+00:00",
+   "built": "2026-10-19T12:25:46+00:00",
    "candidates": 2538,
    "checks": {
     "coverpage_filings_compared": 4365,
     "coverpage_value_match_share": 0.9686139747995418,
+    "row_value_fixes": 2895,
+    "rows_zeroed": 0,
     "unit_fixes": 70
    },
    "filers": 4310,
@@ -477,7 +479,7 @@
      "sha256": "39298fa803677758b6d1854af89be0825c7a82baf596b872505066a267e60c5b"
     }
    ],
-   "total_long_value": 22798167862696.0
+   "total_long_value": 22775320356006.035
   },
   "2017Q1": {
    "built": "2026-10-19T10:56:09+00:00",
