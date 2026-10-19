@@ -1,17 +1,6 @@
 {
  "quarter": "2016Q1",
- "review_size_jumps": [
-  {
-   "name": "ROYAL LONDON ASSET MANAGEMENT LTD",
-   "aum": 69767734020.65,
-   "aum_prior": 6474085000.0
-  },
-  {
-   "name": "GFS Advisors, LLC",
-   "aum": 12194136686.06043,
-   "aum_prior": 336706000.0
-  }
- ],
+ "review_size_jumps": [],
  "passed": 1,
  "total": 1,
  "checks": [
