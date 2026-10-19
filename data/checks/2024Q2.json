@@ -1,47 +1,6 @@
 {
  "quarter": "2024Q2",
- "review_size_jumps": [
-  {
-   "name": "NORGES BANK",
-   "aum": 669352189466.0,
-   "aum_prior": 0.0
-  },
-  {
-   "name": "HPS Investment Partners, LLC",
-   "aum": 1328910596.0,
-   "aum_prior": 92285719.0
-  },
-  {
-   "name": "Distillate Capital Partners LLC",
-   "aum": 1889982075.0,
-   "aum_prior": 595478.0
-  },
-  {
-   "name": "F/M Investments LLC",
-   "aum": 2769457027.0,
-   "aum_prior": 148086338.0
-  },
-  {
-   "name": "Strategic Financial Concepts, LLC",
-   "aum": 94639694469.97247,
-   "aum_prior": 415080798.0
-  },
-  {
-   "name": "Axiom Advisory, LLC",
-   "aum": 9177014329.0,
-   "aum_prior": 135893781.0
-  },
-  {
-   "name": "GUNN & Co INVESTMENT MANAGEMENT, INC.",
-   "aum": 1686580937.0,
-   "aum_prior": 133008000.0
-  },
-  {
-   "name": "LM Advisors LLC",
-   "aum": 61820375000.0,
-   "aum_prior": 629911000.0
-  }
- ],
+ "review_size_jumps": [],
  "passed": 1,
  "total": 1,
  "checks": [
