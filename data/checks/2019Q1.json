@@ -1,11 +1,23 @@
 {
  "quarter": "2019Q1",
+ "review_size_jumps": [
+  {
+   "name": "GENERAL ELECTRIC CO",
+   "aum": 1466231000.0,
+   "aum_prior": 35038000.0
+  },
+  {
+   "name": "HM PAYSON & CO",
+   "aum": 2616108000.0,
+   "aum_prior": 34103000.0
+  }
+ ],
  "passed": 1,
  "total": 1,
  "checks": [
   {
    "check": "largest filer below $15tn",
-   "largest": "VANGUARD GROUP INC",
+   "largest": "Vanguard (all filing entities)",
    "aum": 2549073227000.0,
    "result": "pass"
   }
