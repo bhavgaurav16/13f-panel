@@ -1,17 +1,6 @@
 {
  "quarter": "2022Q3",
- "review_size_jumps": [
-  {
-   "name": "HALLMARK CAPITAL MANAGEMENT INC",
-   "aum": 1001849000.0,
-   "aum_prior": 222000.0
-  },
-  {
-   "name": "CFS Investment Advisory Services, LLC",
-   "aum": 34391801578.428635,
-   "aum_prior": 653559000.0
-  }
- ],
+ "review_size_jumps": [],
  "passed": 1,
  "total": 1,
  "checks": [
