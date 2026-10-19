@@ -1,11 +1,23 @@
 {
  "quarter": "2020Q1",
+ "review_size_jumps": [
+  {
+   "name": "Clal Insurance Enterprises Holdings Ltd",
+   "aum": 4001719000.0,
+   "aum_prior": 92287933.49231966
+  },
+  {
+   "name": "Sofos Investments, Inc.",
+   "aum": 16791499838.176888,
+   "aum_prior": 115567801.71973178
+  }
+ ],
  "passed": 1,
  "total": 1,
  "checks": [
   {
    "check": "largest filer below $15tn",
-   "largest": "VANGUARD GROUP INC",
+   "largest": "Vanguard (all filing entities)",
    "aum": 2346437348000.0,
    "result": "pass"
   }
