@@ -1,11 +1,33 @@
 {
  "quarter": "2020Q4",
+ "review_size_jumps": [
+  {
+   "name": "NORGES BANK",
+   "aum": 428278171000.0,
+   "aum_prior": 0.0
+  },
+  {
+   "name": "JHL Capital Group LLC",
+   "aum": 1529345000.0,
+   "aum_prior": 0.0
+  },
+  {
+   "name": "Tesco Pension Investment Ltd",
+   "aum": 49491310000.0,
+   "aum_prior": 4321426000.0
+  },
+  {
+   "name": "tru Independence LLC",
+   "aum": 3773491153.25401,
+   "aum_prior": 352779000.0
+  }
+ ],
  "passed": 1,
  "total": 1,
  "checks": [
   {
    "check": "largest filer below $15tn",
-   "largest": "VANGUARD GROUP INC",
+   "largest": "Vanguard (all filing entities)",
    "aum": 3447554067000.0,
    "result": "pass"
   }
