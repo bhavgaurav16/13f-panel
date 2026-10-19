@@ -1,11 +1,23 @@
 {
  "quarter": "2018Q1",
+ "review_size_jumps": [
+  {
+   "name": "MACKAY SHIELDS LLC",
+   "aum": 13973248000.0,
+   "aum_prior": 764496000.0
+  },
+  {
+   "name": "First Command Financial Services, Inc.",
+   "aum": 2280434000.0,
+   "aum_prior": 178965000.0
+  }
+ ],
  "passed": 1,
  "total": 1,
  "checks": [
   {
    "check": "largest filer below $15tn",
-   "largest": "VANGUARD GROUP INC",
+   "largest": "Vanguard (all filing entities)",
    "aum": 2286627689000.0,
    "result": "pass"
   }
