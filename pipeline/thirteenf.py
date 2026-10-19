@@ -113,8 +113,8 @@ def build_books(zip_paths):
     acc = chosen[["ACCESSION_NUMBER", "CIK", "Q", "FILINGMANAGER_NAME"]]
 
     info = info.merge(acc, on="ACCESSION_NUMBER", how="inner")
-    info["VALUE"] = pd.to_numeric(info["VALUE"], errors="coerce").fillna(0.0)
-    info["SSHPRNAMT"] = pd.to_numeric(info["SSHPRNAMT"], errors="coerce").fillna(0.0)
+    info["VALUE"] = pd.to_numeric(info["VALUE"], errors="coerce").fillna(0.0).astype("float64")
+    info["SSHPRNAMT"] = pd.to_numeric(info["SSHPRNAMT"], errors="coerce").fillna(0.0).astype("float64")
     info["CUSIP"] = info["CUSIP"].str.upper().str.strip().str[:9]
     info["PUTCALL"] = info["PUTCALL"].fillna("").str.upper().str.strip()
     names = chosen.sort_values("FILED").groupby("CIK")["FILINGMANAGER_NAME"].last()

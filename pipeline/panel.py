@@ -175,8 +175,8 @@ def load_quarter(paths, q):
     chosen = pd.concat([base, newh[base.columns]])
 
     info = info.merge(chosen[["ACCESSION_NUMBER", "CIK", "FILED"]], on="ACCESSION_NUMBER", how="inner")
-    info["VALUE"] = pd.to_numeric(info["VALUE"], errors="coerce").fillna(0.0)
-    info["SSHPRNAMT"] = pd.to_numeric(info["SSHPRNAMT"], errors="coerce").fillna(0.0)
+    info["VALUE"] = pd.to_numeric(info["VALUE"], errors="coerce").fillna(0.0).astype("float64")
+    info["SSHPRNAMT"] = pd.to_numeric(info["SSHPRNAMT"], errors="coerce").fillna(0.0).astype("float64")
     info["CUSIP"] = info["CUSIP"].fillna("").str.upper().str.strip().str.zfill(9).str[:9]
     info["PUTCALL"] = info["PUTCALL"].fillna("").str.upper().str.strip()
     info["SSHPRNAMTTYPE"] = info["SSHPRNAMTTYPE"].fillna("").str.upper().str.strip()
