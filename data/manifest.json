@@ -1355,7 +1355,7 @@
    "total_long_value": 41090044880198.27
   },
   "2023Q3": {
-   "built": "2026-10-19T15:17:45+00:00",
+   "built": "2026-10-19T17:04:46+00:00",
    "candidates": 3291,
    "checks": {
     "copied_share_field_filers": 0,
@@ -1367,7 +1367,7 @@
    },
    "filers": 6854,
    "has_prior": true,
-   "holding_rows": 254209,
+   "holding_rows": 253177,
    "sec_files": [
     {
      "bytes": 70206149,
