@@ -266,7 +266,7 @@
    "total_long_value": 21733443220281.57
   },
   "2015Q2": {
-   "built": "2026-10-19T14:51:58+00:00",
+   "built": "2026-10-19T16:41:24+00:00",
    "candidates": 2421,
    "checks": {
     "copied_share_field_filers": 0,
@@ -278,7 +278,7 @@
    },
    "filers": 4012,
    "has_prior": true,
-   "holding_rows": 193253,
+   "holding_rows": 193238,
    "sec_files": [
     {
      "bytes": 41338202,
