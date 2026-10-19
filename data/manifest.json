@@ -1154,11 +1154,13 @@
    "total_long_value": 43089343604204.55
   },
   "2022Q2": {
-   "built": "2026-10-19T11:15:58+00:00",
+   "built": "2026-10-19T12:41:58+00:00",
    "candidates": 3271,
    "checks": {
     "coverpage_filings_compared": 6695,
     "coverpage_value_match_share": 0.9677371172516803,
+    "row_value_fixes": 13082,
+    "rows_zeroed": 0,
     "unit_fixes": 68
    },
    "filers": 6650,
@@ -1181,7 +1183,7 @@
      "sha256": "9275e86ec07d95b8958cfd6a0617a4eb72e3f6769490d7f008ea09e9cc999fe9"
     }
    ],
-   "total_long_value": 36057830378844.0
+   "total_long_value": 35863593445918.805
   },
   "2022Q3": {
    "built": "2026-10-19T11:17:04+00:00",
