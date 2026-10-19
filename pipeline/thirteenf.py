@@ -117,12 +117,44 @@ def build_books(zip_paths):
     info["SSHPRNAMT"] = pd.to_numeric(info["SSHPRNAMT"], errors="coerce").fillna(0.0).astype("float64")
     info["CUSIP"] = info["CUSIP"].str.upper().str.strip().str[:9]
     info["PUTCALL"] = info["PUTCALL"].fillna("").str.upper().str.strip()
+    al = load_aliases()
+    info["CIK"] = info["CIK"].map(lambda c: al[c][0] if c in al else c)
+    chosen["CIK"] = chosen["CIK"].map(lambda c: al[c][0] if c in al else c)
     names = chosen.sort_values("FILED").groupby("CIK")["FILINGMANAGER_NAME"].last()
+    for c, (gid, nm) in al.items():
+        if gid in names.index:
+            names[gid] = nm
     return info, names
+
+
+def fix_copied_shares(info):
+    """Some filers paste the dollar value into the share-count field too (VALUE == SSHPRNAMT on most lines),
+    which looks like 'reported in $000s' and would be wrongly scaled up 1000x. For such filers keep the value
+    and restate shares as value / cross-filer median price. Returns (info, number of filers fixed)."""
+    sh = (info.SSHPRNAMTTYPE == "SH") & (info.SSHPRNAMT > 0) & (info.VALUE > 0)
+    same = sh & (info.VALUE == info.SSHPRNAMT)
+    share = same.groupby(info.CIK).sum() / sh.groupby(info.CIK).sum().clip(lower=1)
+    n = sh.groupby(info.CIK).sum()
+    filers = share[(share >= 0.5) & (n >= 5)].index
+    if len(filers):
+        eq = info[sh & (info.PUTCALL == "") & ~info.CIK.isin(filers)]
+        med = (eq.VALUE / eq.SSHPRNAMT).groupby(eq.CUSIP).median()
+        m = info.CIK.isin(filers) & sh
+        px = info.loc[m, "CUSIP"].map(med)
+        info.loc[m & px.reindex(info.index).notna(), "SSHPRNAMT"] = (info.loc[m, "VALUE"] / px).dropna()
+    return info, int(len(filers))
+
+
+def load_aliases():
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "aliases.json")
+    if not os.path.exists(p):
+        return {}
+    return {k: v for k, v in json.load(open(p)).items() if not k.startswith("_")}
 
 
 def fix_units(info):
     """Some filers still report VALUE in $000s. Detect per filer-quarter and rescale."""
+    info, ncopy = fix_copied_shares(info)
     eq = info[(info["SSHPRNAMTTYPE"] == "SH") & (info["PUTCALL"] == "") & (info["SSHPRNAMT"] > 0) & (info["VALUE"] > 0)].copy()
     eq["PX"] = eq["VALUE"] / eq["SSHPRNAMT"]
     med = eq.groupby(["Q", "CUSIP"])["PX"].median().rename("MPX")
@@ -219,6 +251,8 @@ def compute_quarter(info, names, q):
     m["PX"] = m.PX.fillna(0.0)
     m["DSH"] = m.SH - m.SH_P
     m["FLOW"] = m.DSH * m.PX
+    cap = 3 * np.maximum(m.VAL, m.VAL_P)          # guardrail against share-count typos
+    m["FLOW"] = np.clip(m.FLOW, -cap, cap)
     m.loc[m.DSH.abs() < 1, "FLOW"] = 0.0
     m["TIER"] = m.CIK.map(tier)
     m["NEW"] = (m.SH_P <= 0) & (m.SH > 0)

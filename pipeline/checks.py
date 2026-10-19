@@ -44,7 +44,10 @@ def main(q):
     top = f.nlargest(2, "aum")
     res.append({"check": "largest filer below $15tn", "largest": str(top.name.iloc[0]), "aum": float(top.aum.iloc[0]),
                 "result": "pass" if top.aum.iloc[0] < 15e12 else "FAIL"})
-    out = {"quarter": q, "passed": sum(r["result"] == "pass" for r in res), "total": len(res), "checks": res}
+    # review list (not a failure): $1bn+ filers whose size moved >10x vs prior quarter, likely entity change or typo
+    j = f[(f.aum >= 1e9) & f.aum_prior.notna() & ((f.aum / f.aum_prior > 10) | (f.aum / f.aum_prior < 0.1))] if "aum_prior" in f else f.iloc[:0]
+    review = [{"name": str(r["name"]), "aum": float(r.aum), "aum_prior": float(r.aum_prior)} for _, r in j.iterrows()]
+    out = {"quarter": q, "review_size_jumps": review, "passed": sum(r["result"] == "pass" for r in res), "total": len(res), "checks": res}
     os.makedirs(os.path.join(DATA, "checks"), exist_ok=True)
     json.dump(out, open(os.path.join(DATA, "checks", f"{q}.json"), "w"), indent=1, default=str)
     print(json.dumps({k: out[k] for k in ("quarter", "passed", "total")}))

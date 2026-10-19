@@ -1,0 +1,8 @@
+{
+  "_note": "Filer CIKs treated as one manager across restructurings (successor entities). Key = CIK, value = [group id, display name].",
+  "0000102909": ["VANGUARD", "Vanguard (all filing entities)"],
+  "0002100119": ["VANGUARD", "Vanguard (all filing entities)"],
+  "0002100121": ["VANGUARD", "Vanguard (all filing entities)"],
+  "0000933478": ["VANGUARD", "Vanguard (all filing entities)"],
+  "0001811242": ["VANGUARD", "Vanguard (all filing entities)"]
+}
