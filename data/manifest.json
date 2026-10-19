@@ -398,9 +398,10 @@
    "total_long_value": 20508047536555.04
   },
   "2016Q2": {
-   "built": "2026-10-19T12:24:32+00:00",
+   "built": "2026-10-19T14:54:56+00:00",
    "candidates": 2450,
    "checks": {
+    "copied_share_field_filers": 0,
     "coverpage_filings_compared": 4186,
     "coverpage_value_match_share": 0.965121834687052,
     "row_value_fixes": 3697,
