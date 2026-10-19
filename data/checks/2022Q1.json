@@ -1,42 +1,6 @@
 {
  "quarter": "2022Q1",
- "review_size_jumps": [
-  {
-   "name": "Power Corp of Canada",
-   "aum": 1198069000.0,
-   "aum_prior": 39731000.0
-  },
-  {
-   "name": "MCF Advisors LLC",
-   "aum": 1065018000.0,
-   "aum_prior": 4685000.0
-  },
-  {
-   "name": "Mantle Ridge LP",
-   "aum": 1921900000.0,
-   "aum_prior": 99695000.0
-  },
-  {
-   "name": "Landmark Wealth Management, LLC",
-   "aum": 2977278045.20776,
-   "aum_prior": 171000000.0
-  },
-  {
-   "name": "Aaron Wealth Advisors LLC",
-   "aum": 7025371461.11352,
-   "aum_prior": 357780000.0
-  },
-  {
-   "name": "CFS Investment Advisory Services, LLC",
-   "aum": 22430164967.76545,
-   "aum_prior": 744692000.0
-  },
-  {
-   "name": "FUNDSMITH INVESTMENT SERVICES LTD.",
-   "aum": 7290234000.0,
-   "aum_prior": 184074000.0
-  }
- ],
+ "review_size_jumps": [],
  "passed": 1,
  "total": 1,
  "checks": [
