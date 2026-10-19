@@ -1,11 +1,28 @@
 {
  "quarter": "2014Q3",
+ "review_size_jumps": [
+  {
+   "name": "FIRST MANHATTAN CO",
+   "aum": 17184177000.0,
+   "aum_prior": 0.0
+  },
+  {
+   "name": "Boyer & Corporon Wealth Management, LLC",
+   "aum": 1992418000.0,
+   "aum_prior": 196187000.0
+  },
+  {
+   "name": "Advisory Alpha, LLC",
+   "aum": 30352000000.0,
+   "aum_prior": 146805000.0
+  }
+ ],
  "passed": 1,
  "total": 1,
  "checks": [
   {
    "check": "largest filer below $15tn",
-   "largest": "VANGUARD GROUP INC",
+   "largest": "Vanguard (all filing entities)",
    "aum": 1282781133000.0,
    "result": "pass"
   }
