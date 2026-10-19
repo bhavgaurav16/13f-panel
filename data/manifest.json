@@ -66,16 +66,18 @@
    "total_long_value": 18003128226884.703
   },
   "2013Q4": {
-   "built": "2026-10-19T10:45:47+00:00",
-   "candidates": 2290,
+   "built": "2026-10-19T12:18:11+00:00",
+   "candidates": 2289,
    "checks": {
     "coverpage_filings_compared": 3716,
     "coverpage_value_match_share": 0.9596340150699677,
+    "row_value_fixes": 1586,
+    "rows_zeroed": 0,
     "unit_fixes": 65
    },
    "filers": 3666,
    "has_prior": true,
-   "holding_rows": 184319,
+   "holding_rows": 184291,
    "sec_files": [
     {
      "bytes": 36180145,
@@ -93,7 +95,7 @@
      "sha256": "68d1d5056f34f8466b3061d685849f9b632e883bbd8735aba8641196db6cda58"
     }
    ],
-   "total_long_value": 20010601190249.0
+   "total_long_value": 19954868428460.242
   },
   "2014Q1": {
    "built": "2026-10-19T10:46:32+00:00",
