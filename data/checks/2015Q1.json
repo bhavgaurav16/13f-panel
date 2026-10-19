@@ -1,11 +1,23 @@
 {
  "quarter": "2015Q1",
+ "review_size_jumps": [
+  {
+   "name": "ADVENT INTERNATIONAL CORP/MA",
+   "aum": 1296221000.0,
+   "aum_prior": 125244000.0
+  },
+  {
+   "name": "JANA PARTNERS LLC",
+   "aum": 11473372000.0,
+   "aum_prior": 327104000.0
+  }
+ ],
  "passed": 1,
  "total": 1,
  "checks": [
   {
    "check": "largest filer below $15tn",
-   "largest": "VANGUARD GROUP INC",
+   "largest": "Vanguard (all filing entities)",
    "aum": 1474456049000.0,
    "result": "pass"
   }
