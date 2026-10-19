@@ -1,11 +1,23 @@
 {
  "quarter": "2018Q3",
+ "review_size_jumps": [
+  {
+   "name": "Virtus Investment Advisers, Inc.",
+   "aum": 1178492435.8138838,
+   "aum_prior": 2460000.0
+  },
+  {
+   "name": "Graham Capital Management, L.P.",
+   "aum": 3838230000.0,
+   "aum_prior": 337648000.0
+  }
+ ],
  "passed": 1,
  "total": 1,
  "checks": [
   {
    "check": "largest filer below $15tn",
-   "largest": "Vanguard Group Inc",
+   "largest": "Vanguard (all filing entities)",
    "aum": 2559120153000.0,
    "result": "pass"
   }
