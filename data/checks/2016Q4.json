@@ -1,27 +1,6 @@
 {
  "quarter": "2016Q4",
- "review_size_jumps": [
-  {
-   "name": "PacWest Financial Management Inc",
-   "aum": 1688600000.0,
-   "aum_prior": 163348000.0
-  },
-  {
-   "name": "Hillsdale Investment Management Inc.",
-   "aum": 5283507000.0,
-   "aum_prior": 376893000.0
-  },
-  {
-   "name": "NORGES BANK",
-   "aum": 228797409000.0,
-   "aum_prior": 0.0
-  },
-  {
-   "name": "Financial Engines Advisors L.L.C.",
-   "aum": 2033145000.0,
-   "aum_prior": 125383000.0
-  }
- ],
+ "review_size_jumps": [],
  "passed": 1,
  "total": 1,
  "checks": [
