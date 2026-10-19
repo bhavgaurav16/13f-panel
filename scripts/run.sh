@@ -15,7 +15,7 @@ done
 # dashboard flows for the latest 4 quarters (feeds the 13F Flow Monitor)
 if [ -n "$QS" ] || [ ! -f data/dashboard/history.json ]; then
   mkdir -p data/dashboard
-  HIST=""; [ -f data/dashboard/history.json ] && HIST="--history data/dashboard/history.json"
+  HIST=""; [ -f data/dashboard/history.json ] && [ -z "${START:-}" ] && HIST="--history data/dashboard/history.json"
   THIRTEENF_OUT=data/dashboard THIRTEENF_CACHE=cache python pipeline/thirteenf.py --quarters 4 $HIST
   git add data/dashboard && git commit -q -m "dashboard history" || true
   git pull -q --rebase && git push -q
