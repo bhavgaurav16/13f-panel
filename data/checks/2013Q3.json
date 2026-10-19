@@ -1,11 +1,28 @@
 {
  "quarter": "2013Q3",
+ "review_size_jumps": [
+  {
+   "name": "DREMAN VALUE MANAGEMENT, L L C",
+   "aum": 1109480000.0,
+   "aum_prior": 0.0
+  },
+  {
+   "name": "CROSSLINK CAPITAL INC",
+   "aum": 1287258000.0,
+   "aum_prior": 0.0
+  },
+  {
+   "name": "CREDIT AGRICOLE S A",
+   "aum": 22493866000.0,
+   "aum_prior": 0.0
+  }
+ ],
  "passed": 1,
  "total": 1,
  "checks": [
   {
    "check": "largest filer below $15tn",
-   "largest": "Vanguard Group Inc",
+   "largest": "Vanguard (all filing entities)",
    "aum": 1023894398000.0,
    "result": "pass"
   }
