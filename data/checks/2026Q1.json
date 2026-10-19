@@ -1,27 +1,6 @@
 {
  "quarter": "2026Q1",
- "review_size_jumps": [
-  {
-   "name": "ECP ControlCo, LLC",
-   "aum": 6340634818.0,
-   "aum_prior": 204907378.0
-  },
-  {
-   "name": "Corebridge Financial, Inc.",
-   "aum": 1091022820.0,
-   "aum_prior": 268479.0
-  },
-  {
-   "name": "TIAA TRUST, NATIONAL ASSOCIATION",
-   "aum": 1645229666.0,
-   "aum_prior": 41720738230.0
-  },
-  {
-   "name": "Elser Financial Planning, Inc",
-   "aum": 2060325398.0,
-   "aum_prior": 138274594.0
-  }
- ],
+ "review_size_jumps": [],
  "passed": 1,
  "total": 1,
  "checks": [
