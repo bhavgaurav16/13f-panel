@@ -1,11 +1,38 @@
 {
  "quarter": "2020Q2",
+ "review_size_jumps": [
+  {
+   "name": "Regis Management CO LLC",
+   "aum": 4525613000.0,
+   "aum_prior": 435111000.0
+  },
+  {
+   "name": "BDT CAPITAL PARTNERS, LLC",
+   "aum": 2437146000.0,
+   "aum_prior": 112228000.0
+  },
+  {
+   "name": "XPONANCE, INC.",
+   "aum": 3874559000.0,
+   "aum_prior": 122697000.0
+  },
+  {
+   "name": "Premier Fund Managers Ltd",
+   "aum": 1606222000.0,
+   "aum_prior": 154427000.0
+  },
+  {
+   "name": "DUALITY ADVISERS, LP",
+   "aum": 1099092000.0,
+   "aum_prior": 1000.0
+  }
+ ],
  "passed": 1,
  "total": 1,
  "checks": [
   {
    "check": "largest filer below $15tn",
-   "largest": "VANGUARD GROUP INC",
+   "largest": "Vanguard (all filing entities)",
    "aum": 2819342194000.0,
    "result": "pass"
   }
