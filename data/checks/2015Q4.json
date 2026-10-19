@@ -1,11 +1,23 @@
 {
  "quarter": "2015Q4",
+ "review_size_jumps": [
+  {
+   "name": "NORGES BANK",
+   "aum": 201158874000.0,
+   "aum_prior": 0.0
+  },
+  {
+   "name": "Hanlon Investment Management, Inc.",
+   "aum": 1050979000.0,
+   "aum_prior": 51575000.0
+  }
+ ],
  "passed": 1,
  "total": 1,
  "checks": [
   {
    "check": "largest filer below $15tn",
-   "largest": "VANGUARD GROUP INC",
+   "largest": "Vanguard (all filing entities)",
    "aum": 1487143607000.0,
    "result": "pass"
   }
