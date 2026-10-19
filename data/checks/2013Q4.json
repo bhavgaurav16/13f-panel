@@ -1,11 +1,23 @@
 {
  "quarter": "2013Q4",
+ "review_size_jumps": [
+  {
+   "name": "NORGES BANK",
+   "aum": 173639632000.0,
+   "aum_prior": 0.0
+  },
+  {
+   "name": "Laurion Capital Management LP",
+   "aum": 1068083000.0,
+   "aum_prior": 69409000.0
+  }
+ ],
  "passed": 1,
  "total": 1,
  "checks": [
   {
    "check": "largest filer below $15tn",
-   "largest": "VANGUARD GROUP INC",
+   "largest": "Vanguard (all filing entities)",
    "aum": 1137153301000.0,
    "result": "pass"
   }
