@@ -1,6 +1,13 @@
 {
  "quarter": "2015Q2",
- "passed": 0,
- "total": 0,
- "checks": []
+ "passed": 1,
+ "total": 1,
+ "checks": [
+  {
+   "check": "largest filer below $15tn",
+   "largest": "VANGUARD GROUP INC",
+   "aum": 1479345105000.0,
+   "result": "pass"
+  }
+ ]
 }

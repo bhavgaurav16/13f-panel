@@ -258,16 +258,18 @@
    "total_long_value": 21733443220281.57
   },
   "2015Q2": {
-   "built": "2026-10-19T10:50:26+00:00",
-   "candidates": 2420,
+   "built": "2026-10-19T12:21:51+00:00",
+   "candidates": 2421,
    "checks": {
     "coverpage_filings_compared": 4077,
     "coverpage_value_match_share": 0.9602649006622517,
+    "row_value_fixes": 1621,
+    "rows_zeroed": 0,
     "unit_fixes": 81
    },
    "filers": 4012,
    "has_prior": true,
-   "holding_rows": 193140,
+   "holding_rows": 193253,
    "sec_files": [
     {
      "bytes": 41338202,
@@ -285,7 +287,7 @@
      "sha256": "6594076b6d8b02bbb0d71e4ef9a8d843bca9d4397b3b57a7f7c52e9e555619f7"
     }
    ],
-   "total_long_value": 22747516820804.0
+   "total_long_value": 21679007689382.54
   },
   "2015Q3": {
    "built": "2026-10-19T10:51:14+00:00",
