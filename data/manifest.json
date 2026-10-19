@@ -1421,9 +1421,10 @@
    "total_long_value": 45020348559949.23
   },
   "2024Q1": {
-   "built": "2026-10-19T12:49:01+00:00",
+   "built": "2026-10-19T15:19:49+00:00",
    "candidates": 3387,
    "checks": {
+    "copied_share_field_filers": 0,
     "coverpage_filings_compared": 7284,
     "coverpage_value_match_share": 0.9846238330587589,
     "row_value_fixes": 10128,
