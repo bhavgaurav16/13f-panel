@@ -1,11 +1,28 @@
 {
  "quarter": "2014Q1",
+ "review_size_jumps": [
+  {
+   "name": "Fore Research & Management, LP",
+   "aum": 1581828000.0,
+   "aum_prior": 41601000.0
+  },
+  {
+   "name": "AVIANCE CAPITAL MANAGEMENT, LLC",
+   "aum": 1967508000.0,
+   "aum_prior": 187780000.0
+  },
+  {
+   "name": "Livforsakringsbolaget Skandia, Omsesidigt",
+   "aum": 2662761000.0,
+   "aum_prior": 154546000.0
+  }
+ ],
  "passed": 1,
  "total": 1,
  "checks": [
   {
    "check": "largest filer below $15tn",
-   "largest": "VANGUARD GROUP INC",
+   "largest": "Vanguard (all filing entities)",
    "aum": 1188978890000.0,
    "result": "pass"
   }
