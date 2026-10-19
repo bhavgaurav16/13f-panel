@@ -1,22 +1,6 @@
 {
  "quarter": "2023Q2",
- "review_size_jumps": [
-  {
-   "name": "Bishop & Co Investment Management, LLC",
-   "aum": 2228620000.0,
-   "aum_prior": 217071706.0
-  },
-  {
-   "name": "Houlihan Financial Resource Group, Ltd.",
-   "aum": 3216482000.0,
-   "aum_prior": 183299000.0
-  },
-  {
-   "name": "Pinpoint Asset Management Ltd",
-   "aum": 4844973898.658598,
-   "aum_prior": 373432211.0
-  }
- ],
+ "review_size_jumps": [],
  "passed": 1,
  "total": 1,
  "checks": [
