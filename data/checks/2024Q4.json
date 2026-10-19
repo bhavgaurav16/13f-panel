@@ -1,11 +1,68 @@
 {
  "quarter": "2024Q4",
+ "review_size_jumps": [
+  {
+   "name": "NORGES BANK",
+   "aum": 762050187394.0,
+   "aum_prior": 0.0
+  },
+  {
+   "name": "SVB WEALTH LLC",
+   "aum": 5352192191.0,
+   "aum_prior": 117526133.0
+  },
+  {
+   "name": "Cable Car Capital, LP",
+   "aum": 1310108806.0,
+   "aum_prior": 90508229.0
+  },
+  {
+   "name": "Demars Financial Group, LLC",
+   "aum": 3052161895.85,
+   "aum_prior": 219257587.0
+  },
+  {
+   "name": "New Age Alpha Advisors, LLC",
+   "aum": 2471355240.0,
+   "aum_prior": 162710281.0
+  },
+  {
+   "name": "Freemont Capital Pte Ltd",
+   "aum": 4727513592.0,
+   "aum_prior": 21497481.0
+  },
+  {
+   "name": "INTERNATIONAL ASSETS INVESTMENT MANAGEMENT, LLC",
+   "aum": 1195982565.0,
+   "aum_prior": 34523153137.685905
+  },
+  {
+   "name": "WIT, LLC",
+   "aum": 3120142636.0,
+   "aum_prior": 3465535.972
+  },
+  {
+   "name": "Essential Planning, LLC.",
+   "aum": 15352691535.0,
+   "aum_prior": 243775310.0
+  },
+  {
+   "name": "TORNO CAPITAL, LLC",
+   "aum": 1002940348.0,
+   "aum_prior": 74672866.0
+  },
+  {
+   "name": "Elser Financial Planning, Inc",
+   "aum": 1671157159.0,
+   "aum_prior": 68924391.0
+  }
+ ],
  "passed": 1,
  "total": 1,
  "checks": [
   {
    "check": "largest filer below $15tn",
-   "largest": "VANGUARD GROUP INC",
+   "largest": "Vanguard (all filing entities)",
    "aum": 5741207245727.0,
    "result": "pass"
   }
