@@ -1,11 +1,38 @@
 {
  "quarter": "2021Q1",
+ "review_size_jumps": [
+  {
+   "name": "JB Investments Management, LLC",
+   "aum": 2737599655.388674,
+   "aum_prior": 0.0
+  },
+  {
+   "name": "Horizon Investments, LLC",
+   "aum": 2722696000.0,
+   "aum_prior": 87857000.0
+  },
+  {
+   "name": "Factorial Partners, LLC",
+   "aum": 3124060049.3889136,
+   "aum_prior": 119653166.0
+  },
+  {
+   "name": "Ghisallo Capital Management LLC",
+   "aum": 1562399000.0,
+   "aum_prior": 114932000.0
+  },
+  {
+   "name": "GREENOAKS CAPITAL PARTNERS LLC",
+   "aum": 14793555000.0,
+   "aum_prior": 344283000.0
+  }
+ ],
  "passed": 1,
  "total": 1,
  "checks": [
   {
    "check": "largest filer below $15tn",
-   "largest": "VANGUARD GROUP INC",
+   "largest": "Vanguard (all filing entities)",
    "aum": 3696790000000.0,
    "result": "pass"
   }
