@@ -1,11 +1,43 @@
 {
  "quarter": "2019Q4",
+ "review_size_jumps": [
+  {
+   "name": "NORGES BANK",
+   "aum": 358377758000.0,
+   "aum_prior": 0.0
+  },
+  {
+   "name": "PATHSTONE FAMILY OFFICE, LLC",
+   "aum": 9211786000.0,
+   "aum_prior": 767007000.0
+  },
+  {
+   "name": "Columbia Asset Management",
+   "aum": 4150069000.0,
+   "aum_prior": 383995731.4505645
+  },
+  {
+   "name": "Johanson Financial Advisors, Inc.",
+   "aum": 2103598398.4607694,
+   "aum_prior": 192183000.0
+  },
+  {
+   "name": "Ursa Fund Management, LLC",
+   "aum": 1251965000.0,
+   "aum_prior": 77177000.0
+  },
+  {
+   "name": "Qube Research & Technologies Ltd",
+   "aum": 3186249000.0,
+   "aum_prior": 150140000.0
+  }
+ ],
  "passed": 1,
  "total": 1,
  "checks": [
   {
    "check": "largest filer below $15tn",
-   "largest": "VANGUARD GROUP INC",
+   "largest": "Vanguard (all filing entities)",
    "aum": 2932327794000.0,
    "result": "pass"
   }
