@@ -1,32 +1,6 @@
 {
  "quarter": "2024Q1",
- "review_size_jumps": [
-  {
-   "name": "HANTZ FINANCIAL SERVICES, INC.",
-   "aum": 5131378000.0,
-   "aum_prior": 306752000.0
-  },
-  {
-   "name": "SUSQUEHANNA FUNDAMENTAL INVESTMENTS, LLC",
-   "aum": 2143362705.0,
-   "aum_prior": 98835543.0
-  },
-  {
-   "name": "BC Partners Advisors L.P.",
-   "aum": 1154301000.0,
-   "aum_prior": 1319688.0
-  },
-  {
-   "name": "Simplicity Wealth,LLC",
-   "aum": 4197170102.0,
-   "aum_prior": 258367415.0
-  },
-  {
-   "name": "Global Assets Advisory, LLC",
-   "aum": 2169221321.2,
-   "aum_prior": 77082841.0
-  }
- ],
+ "review_size_jumps": [],
  "passed": 1,
  "total": 1,
  "checks": [
