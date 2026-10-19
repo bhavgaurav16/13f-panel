@@ -1,32 +1,6 @@
 {
  "quarter": "2014Q4",
- "review_size_jumps": [
-  {
-   "name": "ROYAL LONDON ASSET MANAGEMENT LTD",
-   "aum": 52893388000.0,
-   "aum_prior": 3984368000.0
-  },
-  {
-   "name": "CIBC WORLD MARKETS CORP",
-   "aum": 1832341000.0,
-   "aum_prior": 36024000.0
-  },
-  {
-   "name": "NORGES BANK",
-   "aum": 196062300000.0,
-   "aum_prior": 0.0
-  },
-  {
-   "name": "Canaan Partners VII LLC",
-   "aum": 1257326000.0,
-   "aum_prior": 58633000.0
-  },
-  {
-   "name": "OAK HILL CAPITAL MANAGEMENT, LLC",
-   "aum": 1647352000.0,
-   "aum_prior": 88516000.0
-  }
- ],
+ "review_size_jumps": [],
  "passed": 1,
  "total": 1,
  "checks": [
