@@ -1,5 +1,5 @@
 {
- "latest": "2018Q2",
+ "latest": "2018Q3",
  "quarters": {
   "2013Q2": {
    "built": "2026-10-19T10:44:19+00:00",
@@ -630,6 +630,36 @@
     }
    ],
    "total_long_value": 174003613043660.0
+  },
+  "2018Q3": {
+   "built": "2026-10-19T11:01:13+00:00",
+   "candidates": 2572,
+   "checks": {
+    "coverpage_filings_compared": 4682,
+    "coverpage_value_match_share": 0.9666809055958991,
+    "unit_fixes": 66
+   },
+   "filers": 4644,
+   "has_prior": true,
+   "holding_rows": 201194,
+   "sec_files": [
+    {
+     "bytes": 46594809,
+     "name": "2018q3_form13f.zip",
+     "sha256": "9c957e53225dfb3a496c50c7016580567e037ae7a5d3c14a3ac7a97a7916f6d0"
+    },
+    {
+     "bytes": 48470720,
+     "name": "2018q4_form13f.zip",
+     "sha256": "6d8609212b0171ea18e4bcfebf320de308d60c44988c1ac48e7c321015d97991"
+    },
+    {
+     "bytes": 46510727,
+     "name": "2019q1_form13f.zip",
+     "sha256": "ddc49b87210a9f12efac87468c293809b49f4ccd8d7c022cdfff5321e423f5c8"
+    }
+   ],
+   "total_long_value": 287809928455170.0
   }
  }
 }
