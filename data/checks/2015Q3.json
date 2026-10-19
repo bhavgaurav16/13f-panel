@@ -1,11 +1,18 @@
 {
  "quarter": "2015Q3",
+ "review_size_jumps": [
+  {
+   "name": "PHILADELPHIA TRUST CO",
+   "aum": 1107440000.0,
+   "aum_prior": 27082359.443987317
+  }
+ ],
  "passed": 1,
  "total": 1,
  "checks": [
   {
    "check": "largest filer below $15tn",
-   "largest": "VANGUARD GROUP INC",
+   "largest": "Vanguard (all filing entities)",
    "aum": 1384583987000.0,
    "result": "pass"
   }
