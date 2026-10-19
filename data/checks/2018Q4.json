@@ -1,6 +1,13 @@
 {
  "quarter": "2018Q4",
- "passed": 0,
- "total": 0,
- "checks": []
+ "passed": 1,
+ "total": 1,
+ "checks": [
+  {
+   "check": "largest filer below $15tn",
+   "largest": "Vanguard Group Inc",
+   "aum": 2225644416000.0,
+   "result": "pass"
+  }
+ ]
 }
