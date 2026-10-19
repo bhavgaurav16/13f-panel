@@ -1,6 +1,13 @@
 {
  "quarter": "2024Q2",
- "passed": 0,
- "total": 0,
- "checks": []
+ "passed": 1,
+ "total": 1,
+ "checks": [
+  {
+   "check": "largest filer below $15tn",
+   "largest": "VANGUARD GROUP INC",
+   "aum": 5205557821184.0,
+   "result": "pass"
+  }
+ ]
 }
