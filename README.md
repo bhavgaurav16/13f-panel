@@ -20,6 +20,7 @@ This repo turns every SEC Form 13F filing since 2013 into a clean, per-manager q
 - **Cleaning:** fixes for the pre-2023 $000s unit change, share-count copy errors, stock splits and filer aliases.
 - **Features per manager:** AUM, number of positions, effective N, top-10 weight, active share, turnover, option notionals, and a *redemption signature* (trim breadth and dispersion), which detects managers selling across the book to meet outflows rather than by choice.
 - **Candidates:** managers with $50m+ AUM, at most 200 positions and at most 50% in ETFs (3,696 in 2026Q2). These are the books concentrated enough to carry a signal.
+- **Next test (pre-registered):** do high-conviction managers' buys beat the market after the filing delay? Hypothesis, rules and decision criteria are fixed in [`docs/preregistration.md`](docs/preregistration.md) before any return is computed.
 
 ## How it is checked
 - `pipeline/audit.py` fails the build if any guardrail breaks: tier flows above 10% of AUM, total value moving more than 35% in a quarter, implausible filer size, or suspected unadjusted splits. The current audit passes.
