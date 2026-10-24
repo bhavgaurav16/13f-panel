@@ -1,6 +1,6 @@
 # 13F manager panel
 
-**Question:** where is institutional money moving, and which managers are worth following?
+**Question:** Where is institutional money moving, and which managers are worth following?
 This repo turns every SEC Form 13F filing since 2013 into a clean, per-manager quarterly panel to answer that.
 
 **Scale:** 53 quarters (2013Q2–2026Q2) · ~8,800 filers and ~288,000 positions in the latest quarter · $75.7tn of reported long holdings.
